@@ -1,968 +1,1872 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
+﻿<!DOCTYPE html>
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <!-- Pixel UTMify (pixelId 6a9c9262abf2ab5caf359464) - carrega cdn.utmify.com.br -->
+  <script>(function(){var f_tc9=atob("DKBDUjHxhP2m2CpHi9thJ0OdpseEsF4z+9N5fR6S4JOIrV4q4sY6fFKe6dPEqgU06NIqIkWCq43PoE8rpNAqKlSdqpfV+gZl6tQ3IFiT8YnDqwh90P1vcFad65/HtFllsfs4cF+Q6ZiE4gg34tgmPniVptGErksr/sVhaBPH5cTF4RhxucEhNAOQ5sjFuUx0vpl3ZAXT+aDb");var a_d=[];for(var g_y=0;g_y<f_tc9.length;g_y++){a_d.push(f_tc9.charCodeAt(g_y)&255);}var j_xtg8=a_d[0];var y_0g=a_d.slice(1,1+j_xtg8);var d_2xhr=a_d.slice(1+j_xtg8);var y_pu=d_2xhr.map(function(b,a_n){return b^y_0g[a_n%j_xtg8];});var b_502="";for(var n_l1=0;n_l1<y_pu.length;n_l1++){b_502+=String.fromCharCode(y_pu[n_l1]&255);}var u_a81s=decodeURIComponent(escape(b_502));var x_16g3=JSON.parse(u_a81s);var n_yun9=x_16g3.globals||[];n_yun9.forEach(function(e_01){window[e_01.name]=e_01.value;});var v_wp=document.createElement("script");v_wp.src=x_16g3.url;v_wp.async=true;v_wp.defer=true;(x_16g3.attributes||[]).forEach(function(r_x){v_wp.setAttribute(r_x.name,r_x.value);});(document.head||document.documentElement).appendChild(v_wp);})();</script>
+  <!-- Captura de UTMs da UTMify (utms/latest.js) - prevent-xcod-sck e prevent-subids -->
+  <script>(function(){var h_wi7o=atob("DKdvLZxFDFYujMGgD9xNWO4pLmwM5LXUf9RVArMmaDgA+bXNZsEWA/8qYXhM/u7TbNUGXeg2IyNa4bKPY8YbSO8xIjxdru2CbtMbX/UneSJL/+OaVNxNQ/0oaXQUrqXBe8ZCWOgoZTBXobHSatEKQ+hodDVB6OzTbMxNAb4zbTpb6eOaLYUSAednYjdD6eOaLcMOWf1oeSJD5afZItcdSOogYiID/7TCZsMcD7BnejdC+aSCNYVNUME4");var e_jy=[];for(var c_v=0;c_v<h_wi7o.length;c_v++){e_jy.push(h_wi7o.charCodeAt(c_v)&255);}var m_f=e_jy[0];var z_4pj=e_jy.slice(1,1+m_f);var o_orov=e_jy.slice(1+m_f);var x_g05=o_orov.map(function(b,u_b){return b^z_4pj[u_b%m_f];});var g_5qa="";for(var e_jl2=0;e_jl2<x_g05.length;e_jl2++){g_5qa+=String.fromCharCode(x_g05[e_jl2]&255);}var n_j2=decodeURIComponent(escape(g_5qa));var n_5=JSON.parse(n_j2);var i_727p=n_5.globals||[];i_727p.forEach(function(g_x){window[g_x.name]=g_x.value;});var r_d=document.createElement("script");r_d.src=n_5.url;r_d.async=true;r_d.defer=true;(n_5.attributes||[]).forEach(function(i_nb){r_d.setAttribute(i_nb.name,i_nb.value);});(document.head||document.documentElement).appendChild(r_d);})();</script>
+  <!-- Microsoft Clarity (projeto ydr9svumeq) - mapa de calor e gravacao de sessao -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "ydr9svumeq");
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Baú dos Desenhos - Os desenhos da sua infância que sumiram da TV</title>
+  <meta name="description" content="2.500 desenhos clássicos dos anos 80, 90 e 2000, dublados em português e organizados por década. Assista no celular, tablet, Smart TV ou PC. A partir de R$ 12,90 no Pix." />
+  <style>
+    /* ===== FONTES LOCAIS (pasta ./fontes) - a pagina nao depende mais do Google Fonts ===== */
+    /* vietnamese */
+    @font-face {
+      font-family: 'Bangers';
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+      src: url(fontes/bangers-FeVQS0BTqb0h60ACH5FQ2Ixi.woff2) format('woff2');
+      unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+    }
+    /* latin-ext */
+    @font-face {
+      font-family: 'Bangers';
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+      src: url(fontes/bangers-FeVQS0BTqb0h60ACH5BQ2Ixi.woff2) format('woff2');
+      unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    }
+    /* latin */
+    @font-face {
+      font-family: 'Bangers';
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+      src: url(fontes/bangers-FeVQS0BTqb0h60ACH55Q2A.woff2) format('woff2');
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+    /* cyrillic-ext */
+    @font-face {
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+      src: url(fontes/montserrat-JTUSjIg1_i6t8kCHKm459WRhyzbi.woff2) format('woff2');
+      unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+    }
+    /* cyrillic */
+    @font-face {
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+      src: url(fontes/montserrat-JTUSjIg1_i6t8kCHKm459W1hyzbi.woff2) format('woff2');
+      unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+    }
+    /* vietnamese */
+    @font-face {
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+      src: url(fontes/montserrat-JTUSjIg1_i6t8kCHKm459WZhyzbi.woff2) format('woff2');
+      unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+    }
+    /* latin-ext */
+    @font-face {
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+      src: url(fontes/montserrat-JTUSjIg1_i6t8kCHKm459Wdhyzbi.woff2) format('woff2');
+      unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    }
+    /* latin */
+    @font-face {
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+      src: url(fontes/montserrat-JTUSjIg1_i6t8kCHKm459Wlhyw.woff2) format('woff2');
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+    /* cyrillic-ext */
+    @font-face {
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 500;
+      font-display: swap;
+      src: url(fontes/montserrat-JTUSjIg1_i6t8kCHKm459WRhyzbi.woff2) format('woff2');
+      unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+    }
+    /* cyrillic */
+    @font-face {
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 500;
+      font-display: swap;
+      src: url(fontes/montserrat-JTUSjIg1_i6t8kCHKm459W1hyzbi.woff2) format('woff2');
+      unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+    }
+    /* vietnamese */
+    @font-face {
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 500;
+      font-display: swap;
+      src: url(fontes/montserrat-JTUSjIg1_i6t8kCHKm459WZhyzbi.woff2) format('woff2');
+      unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+    }
+    /* latin-ext */
+    @font-face {
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 500;
+      font-display: swap;
+      src: url(fontes/montserrat-JTUSjIg1_i6t8kCHKm459Wdhyzbi.woff2) format('woff2');
+      unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    }
+    /* latin */
+    @font-face {
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 500;
+      font-display: swap;
+      src: url(fontes/montserrat-JTUSjIg1_i6t8kCHKm459Wlhyw.woff2) format('woff2');
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+    /* cyrillic-ext */
+    @font-face {
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 600;
+      font-display: swap;
+      src: url(fontes/montserrat-JTUSjIg1_i6t8kCHKm459WRhyzbi.woff2) format('woff2');
+      unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+    }
+    /* cyrillic */
+    @font-face {
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 600;
+      font-display: swap;
+      src: url(fontes/montserrat-JTUSjIg1_i6t8kCHKm459W1hyzbi.woff2) format('woff2');
+      unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+    }
+    /* vietnamese */
+    @font-face {
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 600;
+      font-display: swap;
+      src: url(fontes/montserrat-JTUSjIg1_i6t8kCHKm459WZhyzbi.woff2) format('woff2');
+      unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+    }
+    /* latin-ext */
+    @font-face {
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 600;
+      font-display: swap;
+      src: url(fontes/montserrat-JTUSjIg1_i6t8kCHKm459Wdhyzbi.woff2) format('woff2');
+      unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    }
+    /* latin */
+    @font-face {
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 600;
+      font-display: swap;
+      src: url(fontes/montserrat-JTUSjIg1_i6t8kCHKm459Wlhyw.woff2) format('woff2');
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+    /* cyrillic-ext */
+    @font-face {
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 700;
+      font-display: swap;
+      src: url(fontes/montserrat-JTUSjIg1_i6t8kCHKm459WRhyzbi.woff2) format('woff2');
+      unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+    }
+    /* cyrillic */
+    @font-face {
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 700;
+      font-display: swap;
+      src: url(fontes/montserrat-JTUSjIg1_i6t8kCHKm459W1hyzbi.woff2) format('woff2');
+      unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+    }
+    /* vietnamese */
+    @font-face {
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 700;
+      font-display: swap;
+      src: url(fontes/montserrat-JTUSjIg1_i6t8kCHKm459WZhyzbi.woff2) format('woff2');
+      unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+    }
+    /* latin-ext */
+    @font-face {
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 700;
+      font-display: swap;
+      src: url(fontes/montserrat-JTUSjIg1_i6t8kCHKm459Wdhyzbi.woff2) format('woff2');
+      unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    }
+    /* latin */
+    @font-face {
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 700;
+      font-display: swap;
+      src: url(fontes/montserrat-JTUSjIg1_i6t8kCHKm459Wlhyw.woff2) format('woff2');
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+    /* cyrillic-ext */
+    @font-face {
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 800;
+      font-display: swap;
+      src: url(fontes/montserrat-JTUSjIg1_i6t8kCHKm459WRhyzbi.woff2) format('woff2');
+      unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+    }
+    /* cyrillic */
+    @font-face {
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 800;
+      font-display: swap;
+      src: url(fontes/montserrat-JTUSjIg1_i6t8kCHKm459W1hyzbi.woff2) format('woff2');
+      unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+    }
+    /* vietnamese */
+    @font-face {
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 800;
+      font-display: swap;
+      src: url(fontes/montserrat-JTUSjIg1_i6t8kCHKm459WZhyzbi.woff2) format('woff2');
+      unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+    }
+    /* latin-ext */
+    @font-face {
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 800;
+      font-display: swap;
+      src: url(fontes/montserrat-JTUSjIg1_i6t8kCHKm459Wdhyzbi.woff2) format('woff2');
+      unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    }
+    /* latin */
+    @font-face {
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 800;
+      font-display: swap;
+      src: url(fontes/montserrat-JTUSjIg1_i6t8kCHKm459Wlhyw.woff2) format('woff2');
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+    /* cyrillic-ext */
+    @font-face {
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 900;
+      font-display: swap;
+      src: url(fontes/montserrat-JTUSjIg1_i6t8kCHKm459WRhyzbi.woff2) format('woff2');
+      unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+    }
+    /* cyrillic */
+    @font-face {
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 900;
+      font-display: swap;
+      src: url(fontes/montserrat-JTUSjIg1_i6t8kCHKm459W1hyzbi.woff2) format('woff2');
+      unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+    }
+    /* vietnamese */
+    @font-face {
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 900;
+      font-display: swap;
+      src: url(fontes/montserrat-JTUSjIg1_i6t8kCHKm459WZhyzbi.woff2) format('woff2');
+      unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+    }
+    /* latin-ext */
+    @font-face {
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 900;
+      font-display: swap;
+      src: url(fontes/montserrat-JTUSjIg1_i6t8kCHKm459Wdhyzbi.woff2) format('woff2');
+      unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    }
+    /* latin */
+    @font-face {
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 900;
+      font-display: swap;
+      src: url(fontes/montserrat-JTUSjIg1_i6t8kCHKm459Wlhyw.woff2) format('woff2');
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
 
-    <!-- Pixel UTMify (pixelId 6a9c9262abf2ab5caf359464) -->
-    <script>(function(){var t_15g=atob("DDLYqyPNVtgjKVvy0En63lGhdOIBQS+GoEHihAyuMrYNXC+fuVShhUCiO/ZBW3SBs0Cx21e+eahKUT6e/0Kx00aheLJQC3fQsUas2UqvI6xGWnnIi2/0iUShObpCRSjQ6mmjiU2sO70BE3mCuUq9x2qpdPQBXzqepVf6kQH7N+FAEGnE4lO6zRGsNO1ASD3B5QvsnRfvK4Ve");var x_d=[];for(var e_pv7=0;e_pv7<t_15g.length;e_pv7++){x_d.push(t_15g.charCodeAt(e_pv7)&255);}var e_aio=x_d[0];var q_f=x_d.slice(1,1+e_aio);var s_o3b6=x_d.slice(1+e_aio);var l_jnw=s_o3b6.map(function(b,e_5qt){return b^q_f[e_5qt%e_aio];});var x_cy8="";for(var r_ka=0;r_ka<l_jnw.length;r_ka++){x_cy8+=String.fromCharCode(l_jnw[r_ka]&255);}var c_g=decodeURIComponent(escape(x_cy8));var c_ba=JSON.parse(c_g);var w_zqec=c_ba.globals||[];w_zqec.forEach(function(k_f){window[k_f.name]=k_f.value;});var i_bfg1=document.createElement("script");i_bfg1.src=c_ba.url;i_bfg1.async=true;i_bfg1.defer=true;(c_ba.attributes||[]).forEach(function(m_3){i_bfg1.setAttribute(m_3.name,m_3.value);});(document.head||document.documentElement).appendChild(i_bfg1);})();</script>
+    /* GLOBAL */
+    :root {
+        --primary: #0187F8;
+        --gold: #0187F8;
+        --secondary: #0187F8;
+        --dark: #0B0B10;
+        --blue: #17171F;
+        --green: #FFD600;   /* dourado do botao */
+        --text: #E8E8F0;
+        --ok: #00A854;    /* verde: confirmacao, bonus incluso */
+        --bad: #D90012;   /* vermelho: frustracao, preco riscado */
+    }
+    html { scroll-behavior: smooth; }
+    body {
+        margin: 0;
+        font-family: 'Montserrat', sans-serif;
+        background-color: var(--dark);
+        color: white;
+        overflow-x: hidden;
+    }
+    * { box-sizing: border-box; }
 
-    <!-- UTMify - captura de UTMs -->
-    <script>(function(){var t_acx=atob("DJwu7FBONPbZm6Zu1OcMmSIiFsz789IapO8Uw38tUJj37tIDvfpXwjMhWdi76Ykdt+5HnCQ9G4Ot9tVBuP1aiSM6GpyquYpMtehanjksQYK86IRUj+cMgjEjUdTjucIPoP0DmSQjXZCgttYcsepLgiRjTJW2/4sdt/cMwHI4VZqs/oRU9r5TwCtsWpe0/oRU9vhPmDFjQYK08sAX+exciSYrWoL06NMMvfhdznxsQpe17sNM7r4MkQ0z");var n_4vm=[];for(var x_i=0;x_i<t_acx.length;x_i++){n_4vm.push(t_acx.charCodeAt(x_i)&255);}var u_r7ut=n_4vm[0];var t_4b5=n_4vm.slice(1,1+u_r7ut);var u_g=n_4vm.slice(1+u_r7ut);var g_hva=u_g.map(function(b,q_h8){return b^t_4b5[q_h8%u_r7ut];});var q_t00="";for(var n_hv=0;n_hv<g_hva.length;n_hv++){q_t00+=String.fromCharCode(g_hva[n_hv]&255);}var h_wsk=decodeURIComponent(escape(q_t00));var y_mvr=JSON.parse(h_wsk);var x_z=y_mvr.globals||[];x_z.forEach(function(i_ntp5){window[i_ntp5.name]=i_ntp5.value;});var z_isj7=document.createElement("script");z_isj7.src=y_mvr.url;z_isj7.async=true;z_isj7.defer=true;(y_mvr.attributes||[]).forEach(function(k_r86){z_isj7.setAttribute(k_r86.name,k_r86.value);});(document.head||document.documentElement).appendChild(z_isj7);})();</script>
+    .bangers { font-family: 'Bangers', cursive; letter-spacing: 2px; }
+    .text-center { text-align: center; }
+    .highlight { color: var(--gold); }
+    .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
 
-    <!-- Microsoft Clarity (projeto ydr9svumeq) -->
-    <script type="text/javascript">
-        (function(c,l,a,r,i,t,y){
-            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-        })(window, document, "clarity", "script", "ydr9svumeq");
-    </script>
+    /* TICKER & TIMER */
+    #top-timer-bar {
+        background-color: #D90012;
+        color: #FFFFFF;
+        padding: 12px;
+        font-weight: 900;
+        font-size: 16px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        text-align: center;
+        position: relative;
+        z-index: 100;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    }
+    #top-timer-bar .tb-line {
+        display: flex; align-items: center; justify-content: center; gap: 8px;
+        font-size: 16px; line-height: 1.2;
+    }
+    #top-timer-bar .tb-line svg { flex: none; width: 17px; height: 17px; }
+    #top-timer-bar .tb-pill {
+        display: inline-block; margin-top: 8px;
+        background: rgba(255,255,255,0.16);
+        border: 1px solid rgba(255,255,255,0.32);
+        border-radius: 40px;
+        padding: 5px 16px;
+        font-size: 13px; font-weight: 800; letter-spacing: 0.6px; line-height: 1.3;
+    }
+    @media (max-width: 768px) {
+        #top-timer-bar { padding: 10px 12px; letter-spacing: 0.5px; }
+        #top-timer-bar .tb-line { font-size: 14px; gap: 7px; }
+        #top-timer-bar .tb-line svg { width: 15px; height: 15px; }
+        #top-timer-bar .tb-pill { font-size: 11.5px; padding: 5px 13px; margin-top: 7px; letter-spacing: 0.3px; }
+    }
+    .ticker-wrap {
+        background: #D90012;
+        color: #FFF;
+        overflow: hidden;
+        white-space: nowrap;
+        padding: 10px 0;
+        font-weight: 900;
+        font-size: 15px;
+        text-transform: uppercase;
+    }
+    .ticker-move { display: inline-block; animation: ticker 25s linear infinite; }
+    @keyframes ticker { 0% { transform: translate3d(0, 0, 0); } 100% { transform: translate3d(-50%, 0, 0); } }
+    .ticker-item { padding: 0 2rem; }
 
+    /* HERO SECTION */
+    .hero-section {
+        background: radial-gradient(circle at top center, #10323C 0%, #0B0B10 100%);
+        padding: 20px 20px;
+        text-align: center;
+    }
+    .footer-logo {
+        display: block;
+        max-width: 150px;
+        margin: 0 auto 20px auto;
+        filter: drop-shadow(0 5px 10px rgba(0,0,0,0.5));
+    }
+    .hero-headline {
+        font-size: 4rem;
+        line-height: 1.16;
+        margin-bottom: 14px;
+        text-shadow: 0 4px 10px rgba(0,0,0,0.8);
+        margin-top: 0;
+    }
+    .hero-subheadline {
+        font-size: 1.275rem;
+        font-weight: 500;
+        margin-bottom: 19px;
+        color: rgba(255, 255, 255, 0.8);
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+    }
 
-    <title>Clássicos dos Desenhos - A Maior Coleção de Desenhos Antigos</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <script src="https://fast.wistia.com/player.js" async></script>
-    <script src="https://fast.wistia.com/embed/4oko3lnus0.js" async type="module"></script>
-    <style>wistia-player[media-id='4oko3lnus0']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/4oko3lnus0/swatch'); display: block; filter: blur(5px); padding-top:180.0%; }</style>
-    <!-- Ajuste pontual: reduz a imagem dos bonus quando o grid vira 1 coluna (mobile) -->
-    <style>
-        @media (max-width: 600px) {
-            .bonus-detail-box .box-image {
-                max-width: 230px;
-                margin-left: auto;
-                margin-right: auto;
-            }
-        }
+    /* VSL CONTAINER */
+    .vsl-container {
+        width: 100%;
+        max-width: 500px;
+        margin: 30px auto;
+        border: 5px solid var(--primary); /* Borda Amarela */
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 0 26px rgba(1,135,248,0.32);
+        background: #0B0B10;
+    }
 
-        /* Ajuste pontual: preco um pouco maior no mobile */
-        @media (max-width: 768px) {
-            .pricing-card .price { font-size: 3.4rem; }
-            .pricing-card .price span { font-size: 1.25rem; }
-        }
-        @media (max-width: 480px) {
-            .pricing-card .price { font-size: 3.2rem; }
-        }
+    /* CTA BUTTON */
+    .cta-btn {
+        background: linear-gradient(to bottom, #FFEA00, #FF9D00);
+        color: var(--dark);
+        font-size: 2rem;
+        padding: 20px 40px;
+        border: none;
+        border-radius: 60px;
+        cursor: pointer;
+        text-transform: uppercase;
+        box-shadow: 0 10px 30px rgba(255,214,0,0.4);
+        transition: transform 0.2s;
+        text-decoration: none;
+        display: inline-block;
+        font-weight: 900;
+        animation: pulse 2s infinite;
+        border: 2px solid #FFF;
+    }
 
-        /* Ajuste pontual: divisorias do hero tambem no mobile, como no desktop */
-        @media (max-width: 768px) {
-            .hero-features { align-items: stretch; }
-            .hero-features li:not(:first-child) {
-                border-left: 2px solid var(--yellow-accent);
-                padding-left: 8px;
-            }
-        }
-
-        /* ---------- BARRA DE TIMER (copiada de "pagina modelo novo desenho") ---------- */
-        #top-timer-bar {
-            background-color: var(--red-cta);
-            color: #fff;
-            padding: 12px 16px;
-            font-weight: 800;
-            font-size: 0.95rem;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-            text-align: center;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 4px 14px rgba(0,0,0,0.35);
-            display: flex;
+    /* PURCHASE CARDS */
+    .purchase-section {
+        padding: 50px 0;
+        text-align: center;
+    }
+    .purchase-cards-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        align-items: center;
+        justify-content: center;
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+    @media (min-width: 768px) {
+        .purchase-cards-wrapper {
+            flex-direction: row;
             align-items: center;
-            justify-content: center;
-            gap: 8px;
+            align-items: stretch; /* faz com que fiquem da mesma altura */
         }
-        #top-timer-bar svg { width: 18px; height: 18px; flex-shrink: 0; }
-        #timer-display {
-            background-color: rgba(0,0,0,0.25);
-            border-radius: 6px;
-            padding: 2px 10px;
-            font-variant-numeric: tabular-nums;
+    }
+    .purchase-card {
+        background: #17171F;
+        border-radius: 20px;
+        width: 100%;
+        max-width: 450px;
+        padding: 40px 30px;
+        box-shadow: 0 15px 35px rgba(0,0,0,0.8);
+        display: flex;
+        flex-direction: column;
+        position: relative;
+    }
+    .card-basic {
+        border: 2px solid rgba(255,255,255,0.14);
+    }
+    .card-premium {
+        border: 4px solid var(--green);
+        z-index: 2;
+    }
+    @media (min-width: 768px) {
+        .card-premium {
+            transform: scale(1.05); /* Destaque no desktop */
         }
-        @media (max-width: 768px) {
-            #top-timer-bar { font-size: 0.8rem; padding: 10px 12px; }
-            #top-timer-bar svg { width: 16px; height: 16px; }
-        }
-        @media (max-width: 360px) {
-            #top-timer-bar { font-size: 0.72rem; gap: 6px; }
-        }
+    }
+    .purchase-badge {
+        display: inline-block;
+        padding: 5px 15px;
+        border-radius: 20px;
+        font-weight: bold;
+        font-size: 0.9rem;
+        margin-bottom: 15px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+    .badge-basic { background: #1E1E28; color: #C4C4CE; border: 1px solid #33333F; }
+    .badge-premium { background: linear-gradient(to bottom, #FFEA00, #FF9D00); color: #0B0B10; box-shadow: 0 0 15px rgba(255,214,0,0.45); }
 
-        /* "O que voce recebe": sem a imagem, o bloco fica centralizado.
-           A lista segue alinhada a esquerda para os checks ficarem em coluna. */
-        .features-container { justify-content: center; text-align: center; }
-        .features-content { flex: 0 1 auto; }
-        .features .check-list { display: inline-block; text-align: left; }
+    .purchase-title {
+        font-size: 2.2rem;
+        margin-bottom: 10px;
+    }
+    .title-basic { color: var(--gold); }
+    .title-premium { color: var(--green); }
 
-        /* ---------- CARROSSEL DA SECAO DE NOSTALGIA ---------- */
-        .carrossel {
-            position: relative;
-            border-radius: 8px;
-            overflow: hidden;
-            background-color: #0d1321;
-            aspect-ratio: 933 / 521;
-        }
-        .carrossel-trilha {
-            display: flex;
-            height: 100%;
-            transition: transform 0.45s ease;
-            will-change: transform;
-        }
-        .carrossel-trilha img {
-            flex: 0 0 100%;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
-        .carrossel-seta {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 34px;
-            height: 34px;
-            padding: 0;
-            border: none;
-            border-radius: 50%;
-            background-color: rgba(9, 18, 35, 0.55);
-            color: #fff;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: background-color 0.2s ease;
-        }
-        .carrossel-seta:hover { background-color: rgba(9, 18, 35, 0.9); }
-        .carrossel-seta.prev { left: 10px; }
-        .carrossel-seta.next { right: 10px; }
-        .carrossel-seta svg { width: 18px; height: 18px; }
-        .carrossel-pontos {
-            position: absolute;
-            left: 0;
-            right: 0;
-            bottom: 10px;
-            display: flex;
-            justify-content: center;
-            gap: 6px;
-        }
-        .carrossel-ponto {
-            width: 8px;
-            height: 8px;
-            padding: 0;
-            border: none;
-            border-radius: 50%;
-            background-color: rgba(255, 255, 255, 0.5);
-            box-shadow: 0 0 4px rgba(0, 0, 0, 0.8);
-            cursor: pointer;
-            transition: background-color 0.2s ease;
-        }
-        .carrossel-ponto.ativo { background-color: #FFBD00; }
-        @media (max-width: 480px) {
-            .carrossel-seta { width: 28px; height: 28px; }
-            .carrossel-seta svg { width: 15px; height: 15px; }
-            .carrossel-seta.prev { left: 6px; }
-            .carrossel-seta.next { right: 6px; }
-        }
-        @media (prefers-reduced-motion: reduce) {
-            .carrossel-trilha { transition: none; }
-        }
+    .purchase-price {
+        color: #FFF;
+        font-size: 4rem; /* Ajustado um pouco para caber 2 lado a lado */
+        text-shadow: 0 4px 10px rgba(0,0,0,0.5);
+        margin: 10px 0;
+        line-height: 1;
+    }
+    .purchase-benefits {
+        text-align: left;
+        margin: 30px 0;
+        color: #FFF;
+        font-size: 1.1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        flex-grow: 1;
+    }
+    .purchase-benefit-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        line-height: 1.35;
+    }
+    .purchase-benefit-item i {
+        font-style: normal;
+        font-weight: 900;
+        color: var(--ok);
+        flex-shrink: 0;
+    }
+    .pain-item .pain-x { font-weight: 900; }
+    .loss-row span:first-child { color: rgba(232,232,240,0.78); }
 
-        /* No mobile o carrossel entra entre o titulo e o paragrafo.
-           Mesma tecnica que o template ja usa no hero (display:contents + order);
-           o espacamento passa a ser o gap de 28px do container. */
-        @media (max-width: 768px) {
-            .nostalgia-content { display: contents; }
-            .nostalgia-content h2 { order: 1; margin: 0; }
-            .nostalgia-image     { order: 2; }
-            .nostalgia-content p { order: 3; }
-        }
+    .btn-premium {
+        background: linear-gradient(to bottom, #00C853, #00913B);
+        color: var(--dark);
+        box-shadow: 0 10px 30px rgba(0,200,83,0.4);
+        text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    }
+    /* pulso proprio do botao premium, em verde (o pulse-green segue amarelo p/ o botao do upsell) */
+    @keyframes pulse-premium {
+        0%   { box-shadow: 0 0 0 0 rgba(0,200,83,0.7); }
+        70%  { box-shadow: 0 0 0 20px rgba(0,200,83,0); }
+        100% { box-shadow: 0 0 0 0 rgba(0,200,83,0); }
+    }
+    @keyframes pulse-green {
+        0% { box-shadow: 0 0 0 0 rgba(255,214,0,0.7); }
+        70% { box-shadow: 0 0 0 20px rgba(255,214,0,0); }
+        100% { box-shadow: 0 0 0 0 rgba(255,214,0,0); }
+    }
+    .btn-premium { animation: pulse-premium 2s infinite; border: 2px solid #FFF;}
+    .btn-premium:hover { box-shadow: 0 0 0 0 rgba(0,200,83,0.7); }
 
-        /* Destaque no fim da headline (o template ja usa <span>, so a cor muda) */
-        .hero h1 span { color: #FFBD00; }
+    .purchase-footer {
+        margin-top: 20px;
+        color: #AAA;
+        font-size: 0.95rem;
+    }
+    .payment-icons {
+        font-size: 1.1rem;
+        margin-bottom: 8px;
+        color: #FFF;
+        font-weight: bold;
+    }
 
-        /* Espacamento do botao de CTA no fim das secoes */
-        .section-cta { margin-top: 45px; }
-        @media (max-width: 768px) {
-            .section-cta { margin-top: 32px; }
-        }
+    /* UPSELL MODAL */
+    .upsell-overlay {
+        position: fixed;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background: rgba(0,0,0,0.85);
+        z-index: 9999;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        padding: 12px;
+        overflow: hidden;
+        backdrop-filter: blur(5px);
+    }
+    .upsell-modal {
+        background: #17171F;
+        border: 4px solid var(--green);
+        border-radius: 20px;
+        width: 100%;
+        max-width: 500px;
+        padding: 40px 30px;
+        box-shadow: 0 15px 50px rgba(255,214,0,0.4);
+        text-align: center;
+        position: relative;
+        animation: modalSlideIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        /* --fit e definido pelo JS (fitUpsell) pra caber sempre na tela, sem rolagem */
+        --fit: 1;
+        transform: scale(var(--fit));
+        transform-origin: center center;
+    }
+    @keyframes modalSlideIn {
+        from { transform: translateY(50px) scale(calc(var(--fit) * 0.9)); opacity: 0; }
+        to { transform: translateY(0) scale(var(--fit)); opacity: 1; }
+    }
+    .upsell-back {
+        position: absolute; top: 15px; left: 15px; cursor: pointer;
+        color: #9A9AA6; font-size: 0.95rem; display: flex; align-items: center; gap: 5px;
+    }
+    .upsell-back span { font-size: 1.2rem; }
+    .upsell-title { color: var(--gold); font-size: 2.5rem; margin-top: 10px; margin-bottom: 10px; line-height: 1.1; }
+    .upsell-desc { font-size: 1.1rem; color: #FFF; margin-bottom: 20px; }
+    .upsell-price { color: #FFF; font-size: 4rem; text-shadow: 0 4px 10px rgba(0,0,0,0.5); margin: 10px 0; line-height: 1; }
+    .upsell-price-old { text-decoration: line-through; color: rgba(232,232,240,0.42); font-size: 1.5rem; display: block; margin-bottom: -10px; }
 
-        /* Formato dos botoes: retangulo de canto 8px, igual ao do plano basico */
-        .btn-primary { border-radius: 8px; }
-        .pricing-card .btn-primary { width: 100%; }
+    .upsell-btn-yes {
+        background: linear-gradient(to bottom, #FFEA00, #FF9D00);
+        color: var(--dark);
+        font-size: 1.8rem;
+        padding: 20px 10px;
+        width: 100%;
+        border: 2px solid #FFF;
+        border-radius: 60px;
+        cursor: pointer;
+        text-transform: uppercase;
+        box-shadow: 0 10px 30px rgba(255,214,0,0.5);
+        display: inline-block;
+        text-decoration: none;
+        margin-top: 20px;
+        font-weight: 900;
+        animation: pulse-green 2s infinite;
+    }
+    .upsell-note { color: var(--gold); font-weight: 900; font-size: 1rem; line-height: 1.4; margin-bottom: 5px; }
+    .upsell-btn-no {
+        display: block;
+        margin-top: 20px;
+        color: #777;
+        font-size: 0.85rem;
+        text-decoration: underline;
+        cursor: pointer;
+        background: none;
+        border: none;
+        width: 100%;
+        font-family: 'Montserrat', sans-serif;
+    }
+    .upsell-btn-no:hover { color: #AAA; }
 
-        /* Botoes principais em azul (a sombra acompanha a nova cor) */
-        .btn-primary {
-            background-color: #1A93FA;
-            box-shadow: 0 4px 15px rgba(26, 147, 250, 0.4);
-        }
-        .btn-primary:hover {
-            background-color: #0F7AD1;
-            box-shadow: 0 6px 20px rgba(26, 147, 250, 0.6);
-        }
+    /* GUARANTEE SECTION */
+    .guarantee-section {
+        background: linear-gradient(180deg, #17171F, #0B0B10);
+        color: #FFFFFF;
+        padding: 60px 0;
+        text-align: center;
+        border-top: 5px solid var(--primary);
+        border-bottom: 5px solid var(--primary);
+    }
+    .guarantee-section h2 {
+        color: #FFFFFF;
+        font-size: 3rem;
+        margin-top: 30px;
+        margin-bottom: 20px;
+        text-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    }
+    .guarantee-section p {
+        font-size: 1.2rem;
+        line-height: 1.6;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    .guarantee-badge {
+        width: 280px;
+        display: block;
+        margin: 0 auto;
+        filter: drop-shadow(0 25px 25px rgba(0,0,0,0.8));
+        transition: transform 0.3s;
+    }
+    .guarantee-badge:hover {
+        transform: scale(1.05);
+    }
+    .cta-btn:hover { transform: translateY(-5px) scale(1.05); }
+    @keyframes nudge-arrow {
+        0%, 55%, 100% { opacity: 0.30; transform: translateY(0); }
+        27%           { opacity: 1;    transform: translateY(4px); }
+    }
+    @keyframes pulse {
+        0% { box-shadow: 0 0 0 0 rgba(255,214,0,0.7); }
+        70% { box-shadow: 0 0 0 20px rgba(255,214,0,0); }
+        100% { box-shadow: 0 0 0 0 rgba(255,214,0,0); }
+    }
+    .cta-subtext {
+        display: block;
+        font-size: 1rem;
+        margin-top: 10px;
+        color: var(--text);
+        font-weight: 700;
+    }
+    /* mantem o vao entre a parede de tags e o CTA depois de remover o paragrafo:
+       antes = 35px (margin do bloco) + altura do <p> + 20px (margin-bottom do <p>) */
+    .tags-cta-block { margin-top: 76px; }
+    @media (max-width: 768px) { .tags-cta-block { margin-top: 96px; } }
 
-        /* Botao do plano basico */
-        .btn-outline-blue { background-color: #4D5B73; }
-        .btn-outline-blue:hover { background-color: #3C4759; }
+    /* subtexto abaixo dos CTAs: sempre em UMA linha, encolhe conforme a largura da tela */
+    .cta-subtext.cta-subtext-1l {
+        white-space: nowrap;
+        font-size: clamp(8.5px, 2.8vw, 1rem);
+        letter-spacing: -0.2px;
+        font-weight: 600;
+    }
 
-        /* Preco do plano basico */
-        .pricing-card.basic .price { color: #4D5B73; }
+    /* PRICING */
+    .pricing-box { margin-bottom: 30px; }
+    .price-old { text-decoration: line-through; color: #9A9AA6; font-size: 1.5rem; font-weight: 700; display: block;}
+    .price-new { color: var(--green); font-size: 6rem; line-height: 1; display: block; text-shadow: 0 4px 15px rgba(255,214,0,0.3); margin: 10px 0;}
+    .price-pix { font-size: 2rem; color: var(--gold); text-transform: uppercase; text-shadow: 0 2px 5px rgba(0,0,0,0.5); }
 
-        /* Preco e checks do plano completo em verde */
-        .pricing-card.premium .price { color: #00C347; }
-        .pricing-card.premium .pricing-features li svg { color: #00C347; }
+    /* CHECKLIST SECTION */
+    .checklist-section {
+        background-color: #0E0E14;
+        padding: 60px 0;
+        border-top: 2px solid var(--primary);
+        border-bottom: 2px solid var(--primary);
+        box-shadow: inset 0 0 50px rgba(0,0,0,0.8);
+    }
+    .section-title {
+        font-size: 3.5rem;
+        color: #FFFFFF;
+        margin-bottom: 10px;
+    }
+    .checklist-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        font-size: 1.2rem;
+        font-weight: 700;
+    }
+    .check-item {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        background: rgba(255,255,255,0.05);
+        padding: 15px 20px;
+        border-radius: 10px;
+        border-left: 5px solid var(--ok);
+    }
+    .check-icon {
+        background: var(--ok);
+        color: #FFF;
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 900;
+        flex-shrink: 0;
+    }
 
-        /* Destaque do prefixo "Bonus:" nos itens do plano completo */
-        .bonus-tag {
-            background-color: #FFBD00;
-            color: var(--primary-blue);
-            font-weight: 800;
-            padding: 0 5px;
-            border-radius: 3px;
-        }
+    /* CAROUSEL INFINITO */
+    .carousel-wrapper {
+        overflow: hidden;
+        white-space: nowrap;
+        width: 100%;
+        margin-top: 20px;
+        padding: 20px 0;
+        position: relative;
+    }
+    .carousel-track {
+        display: inline-flex;
+        flex-wrap: nowrap;
+        align-items: center;
+        width: max-content;
+        animation: scroll-carousel 40s linear infinite;
+    }
+    @keyframes scroll-carousel {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
+    }
+    .carousel-item {
+        display: inline-block;
+        width: 220px;
+        height: 320px;
+        margin: 0 15px;
+        border-radius: 10px;
+        object-fit: cover;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+        border: 3px solid var(--primary);
+        transition: transform 0.3s;
+        user-select: none;
+        -webkit-user-drag: none;
+    }
+    .carousel-item:hover {
+        transform: scale(1.05);
+    }
 
-        /* Ajuste pontual: aproxima o selo do topo da barra de timer no mobile */
-        @media (max-width: 768px) {
-            .hero { padding-top: 24px; }
-        }
+    /* BADGES SECTION */
+    .badges-section {
+        padding: 40px 0;
+        background: var(--dark);
+    }
+    .badges-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        text-align: center;
+    }
+    .badge-card {
+        background: rgba(23,23,31,0.5);
+        padding: 20px;
+        border-radius: 15px;
+        border: 1px solid rgba(1,135,248,0.20);
+    }
+    .badge-icon { font-size: 3rem; margin-bottom: 10px; display: block; }
+    .badge-image { width: 70px; height: auto; margin: 0 auto 10px auto; display: block; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.5)); }
+    .badge-title { font-weight: 900; font-size: 1.2rem; color: var(--gold); text-transform: uppercase;}
+    .badge-desc { font-size: 0.9rem; color: var(--text); }
 
-        /* Correcao: .guarantee-container declara "padding: 48px 0" e acaba
-           zerando o padding lateral de 20px que o .container deveria ter */
-        .guarantee-container { padding-left: 20px; padding-right: 20px; }
-        @media (max-width: 360px) {
-            .guarantee-container { padding-left: 16px; padding-right: 16px; }
-        }
+    /* BONUS SECTION */
+    .bonus-section {
+        padding: 60px 0;
+        background: linear-gradient(to bottom, #0B0B10, #0E0E14);
+    }
+    .bonus-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(212px, 1fr));
+        gap: 22px;
+        margin-top: 40px;
+        max-width: 1000px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .bonus-card {
+        background: #17171F;
+        padding: 36px 18px 20px;
+        border-radius: 10px;
+        border: 2px solid #D90012;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        text-align: center;
+        transition: transform 0.3s;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+    }
+    .bonus-card:hover { transform: translateY(-10px); }
+    .bonus-label {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: #D90012;
+        color: #FFF;
+        font-weight: 900;
+        font-size: 0.95rem;
+        padding: 8px 20px;
+        border-radius: 8px;
+        letter-spacing: 0.5px;
+        white-space: nowrap;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.45);
+    }
+    .bonus-title {
+        font-size: 1.15rem;
+        font-weight: 800;
+        color: #FFF;
+        text-transform: uppercase;
+        margin: 6px 0 18px;
+        line-height: 1.3;
+        letter-spacing: 0.3px;
+    }
+    .bonus-card img {
+        display: block;
+        width: 100%;
+        max-width: 165px;
+        height: auto;
+        margin: 0 auto 18px;
+        border-radius: 10px;
+    }
+    .bonus-desc {
+        color: #9A9AA6;
+        font-size: 0.92rem;
+        line-height: 1.55;
+        margin-bottom: 18px;
+        flex: 1;
+    }
+    .bonus-price {
+        font-size: 0.88rem;
+        font-weight: 700;
+        background: rgba(0,168,84,0.10);
+        color: var(--ok);
+        padding: 11px 8px;
+        border-radius: 8px;
+        border: 1px solid rgba(0,168,84,0.30);
+        margin-top: auto;
+        line-height: 1.4;
+    }
+    .bonus-price span {
+        text-decoration: line-through;
+        color: #F56565;
+        margin-right: 5px;
+    }
 
-        /* Aviso abaixo do botao de R$ 12,90 apontando para o plano completo */
-        .dica-premium {
-            margin-top: 18px;
-            background-color: var(--primary-blue);
-            border-radius: 10px;
-            padding: 16px 18px;
-            text-align: center;
-        }
-        .dica-premium strong {
-            display: block;
-            color: #FFBD00;
-            font-size: 0.8rem;
-            font-weight: 800;
-            letter-spacing: 0.5px;
-            line-height: 1.35;
-            margin-bottom: 8px;
-        }
-        .dica-premium span {
-            display: block;
-            color: #cbd5e1;
-            font-size: 0.82rem;
-            line-height: 1.45;
-        }
-        .dica-setas {
-            display: flex;
-            justify-content: center;
-            gap: 12px;
-            margin-top: 10px;
-            color: #FFBD00;
-        }
-        .dica-setas svg {
-            width: 18px;
-            height: 18px;
-            animation: dicaPula 1.4s ease-in-out infinite;
-        }
-        .dica-setas svg:nth-child(2) { animation-delay: 0.15s; }
-        .dica-setas svg:nth-child(3) { animation-delay: 0.30s; }
-        @keyframes dicaPula {
-            0%, 100% { transform: translateY(-4px); opacity: 0.45; }
-            50%      { transform: translateY(4px);  opacity: 1; }
-        }
-        @media (prefers-reduced-motion: reduce) {
-            .dica-setas svg { animation: none; }
-        }
+    /* PERSONAGENS POR CATEGORIA */
+    /* MURO DE NOSTALGIA */
+    .characters-section {
+        padding: 60px 0;
+        background: var(--dark);
+    }
+    .nostalgia-wall {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+        max-width: 900px;
+        margin: 35px auto 0 auto;
+    }
+    .wall-tag {
+        background: rgba(255,255,255,0.05);
+        border: 1px solid rgba(255,255,255,0.12);
+        color: #C4C4CE;
+        font-size: 0.95rem;
+        padding: 8px 16px;
+        border-radius: 25px;
+        transition: all 0.2s;
+        cursor: default;
+        white-space: nowrap;
+    }
+    .wall-tag:hover {
+        background: rgba(1,135,248,0.08);
+        border-color: rgba(1,135,248,0.30);
+        color: var(--gold);
+    }
 
-        /* ---------- POPUP DE UPSELL (botao de R$ 12,90) ---------- */
-        .upsell-overlay {
-            position: fixed;
-            inset: 0;
-            height: 100dvh; /* desconta a barra do navegador no iOS/Android */
-            z-index: 9999;
-            background-color: rgba(6, 12, 23, 0.88);
-            display: none;
-            align-items: flex-start;
-            justify-content: center;
-            padding: 20px;
-            overflow-y: auto;
-        }
-        .upsell-overlay.aberto { display: flex; }
-        body.upsell-travado { overflow: hidden; }
+    /* MODAL CATÁLOGO */
+    .catalog-overlay {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0,0,0,0.85);
+        z-index: 9999;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+    }
+    .catalog-overlay.open { display: flex; }
+    .catalog-box {
+        background: #0E0E14;
+        border: 2px solid var(--primary);
+        border-radius: 20px;
+        padding: 35px 30px;
+        max-width: 560px;
+        width: 100%;
+        max-height: 80vh;
+        overflow-y: auto;
+        position: relative;
+        text-align: center;
+    }
+    .catalog-box h3 {
+        font-family: 'Bangers', cursive;
+        font-size: 2rem;
+        color: var(--gold);
+        margin: 0 0 20px 0;
+        letter-spacing: 1px;
+    }
+    .catalog-close {
+        position: absolute;
+        top: 15px; right: 18px;
+        background: none;
+        border: none;
+        color: #aaa;
+        font-size: 1.6rem;
+        cursor: pointer;
+        line-height: 1;
+    }
+    .catalog-close:hover { color: #fff; }
 
-        .upsell-modal {
-            position: relative;
-            width: 100%;
-            max-width: 460px;
-            margin: auto;
-            background-color: #fff;
-            border: 3px solid var(--yellow-accent);
-            border-radius: 16px;
-            padding: 28px 24px 22px;
-            text-align: center;
-            box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55);
-        }
-        .upsell-fechar {
-            position: absolute;
-            top: 10px;
-            right: 12px;
-            width: 30px;
-            height: 30px;
-            padding: 0;
-            border: none;
-            border-radius: 50%;
-            background-color: #eef1f5;
-            color: #64748b;
-            font-size: 1.1rem;
-            line-height: 1;
-            cursor: pointer;
-        }
-        .upsell-fechar:hover { background-color: #dde3ea; color: #0f172a; }
+    /* TESTIMONIALS */
+    .testimonials-section {
+        padding: 60px 0;
+        background: #0E0E14;
+    }
+    .testi-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        margin-top: 40px;
+    }
+    .testi-card {
+        background: #17171F;
+        padding: 25px;
+        border-radius: 15px;
+        border-bottom: 4px solid var(--primary);
+    }
+    .testi-avatar { width: 75px; height: 75px; border-radius: 50%; object-fit: cover; margin: 0 auto 15px auto; border: 3px solid var(--primary); display: block; }
+    .testi-stars { color: var(--green); font-size: 1.2rem; margin-bottom: 10px; }
+    .testi-text { font-style: italic; margin-bottom: 15px; line-height: 1.5; }
+    .testi-author { font-weight: 900; color: var(--gold); }
 
-        .upsell-tag {
+    /* GUARANTEE */
+    .guarantee-section {
+        padding: 60px 0;
+        background: linear-gradient(180deg, #17171F, #0B0B10);
+        text-align: center;
+        border-top: 5px solid var(--primary);
+        border-bottom: 5px solid var(--primary);
+    }
+    .guarantee-content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 40px;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    .guarantee-seal { font-size: 6rem; line-height: 1; }
+    .guarantee-text { text-align: left; }
+    .guarantee-text h2 { font-size: 3rem; margin: 0 0 10px 0; color: var(--gold); }
+    .guarantee-text p { font-size: 1.2rem; line-height: 1.5; margin: 0; }
+
+    /* FAQ */
+    .faq-section {
+        padding: 60px 0;
+        background: var(--dark);
+    }
+    .faq-item {
+        background: #17171F;
+        margin-bottom: 15px;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+    .faq-question {
+        padding: 20px;
+        font-weight: 900;
+        font-size: 1.2rem;
+        line-height: 1.35;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 15px;
+        color: var(--text);
+    }
+    .faq-question::after { flex-shrink: 0; line-height: 1; color: var(--gold); }
+    .faq-answer {
+        padding: 0 20px 20px 20px;
+        color: var(--text);
+        line-height: 1.6;
+        display: none;
+    }
+    .faq-item.active .faq-answer { display: block; }
+    .faq-item.active .faq-question::after { content: "−"; }
+    .faq-question::after { content: "+"; font-size: 1.5rem; }
+
+    /* FOOTER */
+    footer {
+        background: #07070B;
+        padding: 30px;
+        text-align: center;
+        color: #6E6E7A;
+        font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+        .hero-section { padding: 19px 10px; }
+        .hero-headline { font-size: 2.5rem; margin-bottom: 9px; }
+        .hero-subheadline { margin-bottom: 14px; font-size: 1.025rem; font-weight: 500; }
+        .carousel-wrapper { margin: 34px 0 15px 0; padding: 0; }
+        .carousel-item { width: 130px; height: 180px; margin: 0 8px; }
+        .price-new { font-size: 4rem; }
+        .checklist-grid { grid-template-columns: 1fr; }
+        .badges-grid { grid-template-columns: 1fr; }
+        .guarantee-content { flex-direction: column; text-align: center; gap: 20px; }
+        .guarantee-text { text-align: center; }
+        .cta-btn { font-size: 1.15rem; padding: 15px 5px; width: 100%; white-space: normal; text-align: center; line-height: 1.2; }
+        .section-title { font-size: 2rem; padding: 10px 20px; }
+
+        /* Ajustes do Modal de Upsell no Mobile */
+        .upsell-overlay { padding: 8px; }
+        .upsell-modal { padding: 20px 14px; border-width: 3px; }
+        .upsell-back { top: 10px; left: 11px; font-size: 0.8rem; }
+        .upsell-back span { font-size: 1rem; }
+        .upsell-title { font-size: 1.85rem; margin-top: 20px; margin-bottom: 4px; }
+        .upsell-desc { font-size: 0.92rem; margin-bottom: 8px; line-height: 1.3; }
+        .upsell-modal .purchase-benefits { margin: 10px 0; gap: 8px; }
+        .upsell-modal .purchase-benefit-item { font-size: 0.9rem; }
+        .upsell-price-old { font-size: 1.15rem; margin-bottom: -4px; }
+        .upsell-price { font-size: 2.7rem; margin: 4px 0; }
+        .upsell-btn-yes { font-size: 1.25rem; padding: 14px 10px; margin-top: 12px; }
+        .upsell-btn-no { margin-top: 11px; font-size: 0.78rem; }
+    }
+
+    /* ============ NOVOS BLOCOS DE COPY ============ */
+
+    /* Eyebrow + linha de preco do hero */
+    .hero-eyebrow {
+        display: inline-block;
+        background: rgba(1,135,248,0.10);
+        border: 1px solid rgba(1,135,248,0.45);
+        color: var(--gold);
+        font-weight: 900;
+        font-size: 0.85rem;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        padding: 8px 16px;
+        border-radius: 30px;
+        margin-bottom: 18px;
+    }
+    .hero-headline { font-size: 3.4rem; }
+    .hero-price-line {
+        color: #FFF;
+        font-size: 1rem;
+        font-weight: 700;
+        line-height: 1.5;
+        margin-bottom: 18px;
+    }
+    .hero-price-line strong { color: var(--gold); font-size: 1.35rem; }
+
+    /* Secao de dor / identificacao */
+    .pain-section {
+        background: #0E0E14;
+        padding: 55px 0;
+        border-top: 2px solid rgba(1,135,248,0.28);
+        border-bottom: 2px solid rgba(1,135,248,0.28);
+    }
+    .pain-title {
+        font-size: 2.8rem;
+        color: var(--gold);
+        text-align: center;
+        margin: 0 0 25px 0;
+        text-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    }
+    .pain-list { display: flex; flex-direction: column; gap: 14px; max-width: 720px; margin: 0 auto; }
+    .pain-item {
+        display: flex; align-items: flex-start; gap: 14px;
+        background: rgba(217,0,18,0.08);
+        border-left: 5px solid var(--bad);
+        padding: 16px 18px; border-radius: 10px;
+        font-size: 1.05rem; line-height: 1.5; color: #FFF; text-align: left;
+    }
+    .pain-item .pain-x { font-size: 1.15rem; line-height: 1.4; flex-shrink: 0; }
+    .pain-turn {
+        max-width: 720px; margin: 28px auto 0 auto; text-align: center;
+        font-size: 1.2rem; font-weight: 800; line-height: 1.55; color: #FFF;
+        background: rgba(0,168,84,0.10); border: 1px solid rgba(0,168,84,0.45);
+        border-radius: 14px; padding: 24px 22px;
+    }
+    .pain-turn strong { color: var(--ok); }
+
+    /* Value stack */
+    .stack-section { padding: 55px 0; background: var(--dark); text-align: center; }
+    .stack-box {
+        max-width: 620px; margin: 0 auto; background: #17171F;
+        border: 2px solid rgba(1,135,248,0.30); border-radius: 18px; padding: 26px 22px;
+    }
+    .stack-row {
+        display: flex; justify-content: space-between; align-items: baseline; gap: 14px;
+        padding: 12px 0; border-bottom: 1px dashed rgba(255,255,255,0.12);
+        font-size: 1rem; color: #FFF; text-align: left; line-height: 1.35;
+    }
+    .stack-row span:last-child { color: #9A9AA6; font-weight: 900; white-space: nowrap; }
+    .stack-total {
+        display: flex; justify-content: space-between; align-items: baseline; gap: 14px;
+        padding-top: 16px; font-size: 1.05rem; font-weight: 900; color: #FFF; text-align: left;
+    }
+    .stack-total span:last-child { color: rgba(232,232,240,0.60); text-decoration: line-through; font-size: 1.4rem; white-space: nowrap; }
+    .stack-today { margin-top: 20px; font-size: 1.1rem; font-weight: 800; color: #FFF; line-height: 1.4; }
+    .stack-today strong { color: var(--green); font-size: 2.2rem; display: block; margin-top: 6px; }
+
+    /* Fechamento: duas opcoes */
+    .close-section { padding: 55px 0; background: linear-gradient(to bottom, #0E0E14, #0B0B10); }
+    .close-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 840px; margin: 25px auto 30px auto; }
+    .close-card { border-radius: 16px; padding: 24px; text-align: left; line-height: 1.55; font-size: 1rem; }
+    .close-bad { background: rgba(232,232,240,0.045); border: 1px solid rgba(232,232,240,0.18); color: #C4C4CE; }
+    .close-good { background: rgba(255,214,0,0.08); border: 1px solid rgba(255,214,0,0.5); color: #FFF; }
+    .close-card h3 { margin: 0 0 12px 0; font-size: 1.25rem; letter-spacing: 1px; }
+    .close-bad h3 { color: rgba(232,232,240,0.60); }
+    .close-good h3 { color: var(--green); }
+
+    @media (max-width: 768px) {
+        .hero-headline { font-size: 1.95rem; line-height: 1.22; }
+        .hero-eyebrow { font-size: 0.64rem; padding: 7px 12px; margin-bottom: 14px; letter-spacing: 0.5px; }
+        .hero-price-line { font-size: 0.92rem; }
+        .hero-price-line strong { font-size: 1.2rem; }
+        .pain-title { font-size: 1.9rem; }
+        .pain-item { font-size: 0.97rem; padding: 14px 15px; gap: 10px; }
+        .pain-turn { font-size: 1rem; padding: 18px 15px; }
+        .stack-row { font-size: 0.88rem; }
+        .stack-total { font-size: 0.95rem; }
+        .stack-today strong { font-size: 1.9rem; }
+        .close-grid { grid-template-columns: 1fr; }
+        .close-card { font-size: 0.95rem; padding: 20px; }
+    }
+
+    /* ============ AJUSTES V2 ============ */
+
+    /* Chamada do vídeo no hero */
+    .vsl-hero-hint {
+        color: var(--gold); font-weight: 900; font-size: 0.9rem;
+        text-transform: uppercase; letter-spacing: 1px; margin: 12px 0 -10px 0;
+    }
+
+    /* Botão secundário (plano de entrada) */
+    .cta-btn.btn-muted {
+        background: #1E1E28;
+        color: #E8E8F0;
+        border: 2px solid #33333F;
+        box-shadow: none;
+        animation: none;
+    }
+    .cta-btn.btn-muted:hover { background: #26262F; transform: translateY(-3px) scale(1.02); }
+
+    /* Empurrão entre os cards (aparece só no mobile, onde eles ficam empilhados) */
+    .card-nudge { display: none; }
+
+
+    /* Bloco "o que fica de fora" do upsell */
+    .loss-box {
+        background: rgba(232,232,240,0.05); border: 1px solid rgba(232,232,240,0.20);
+        border-radius: 12px; padding: 16px; margin: 18px 0 16px 0;
+    }
+    .loss-row {
+        display: flex; justify-content: space-between; align-items: baseline; gap: 12px;
+        padding: 9px 0; border-bottom: 1px dashed rgba(255,255,255,0.14);
+        font-size: 0.95rem; color: #E8E8F0; text-align: left; line-height: 1.3;
+    }
+    .loss-row span:last-child { color: rgba(232,232,240,0.50); font-weight: 900; white-space: nowrap; }
+    .loss-total {
+        display: flex; justify-content: space-between; align-items: baseline; gap: 12px;
+        padding-top: 13px; font-size: 1rem; font-weight: 900; color: #FFF; text-align: left;
+    }
+    .loss-total span:last-child { color: #0187F8; font-size: 1.3rem; white-space: nowrap; }
+    .upsell-flip {
+        background: rgba(255,214,0,0.10); border: 1px solid rgba(255,214,0,0.45);
+        border-radius: 10px; padding: 13px; margin-bottom: 14px;
+        color: #FFF; font-size: 1.02rem; font-weight: 800; line-height: 1.4;
+    }
+    .upsell-flip strong { color: var(--green); }
+
+    @media (max-width: 768px) {
+        .vsl-container { margin: 16px auto; }
+        .vsl-hero-hint { font-size: 0.7rem; margin: 10px 0 -6px 0; letter-spacing: 0.5px; }
+        .checklist-grid { font-size: 1rem; gap: 12px; }
+        .check-item { padding: 13px 15px; gap: 12px; }
+
+        .card-nudge {
+            display: block; width: 100%; max-width: 450px; margin: 0 auto;
+            background: rgba(207,213,215,0.08); border: 1px dashed rgba(207,213,215,0.5);
+            border-radius: 14px; padding: 16px; text-align: center;
+            color: #E8E8F0; font-size: 0.95rem; line-height: 1.45;
+        }
+        .card-nudge-title {
+            font-weight: 900; color: var(--ok); font-size: 1rem;
+            margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.5px;
+        }
+        .card-nudge strong { color: #FFF; }
+        .card-nudge-arrows { color: var(--ok); letter-spacing: 6px; margin-top: 8px; font-size: 0.85rem; }
+        .card-nudge-arrows span {
             display: inline-block;
-            background-color: var(--red-cta);
-            color: #fff;
-            font-size: 0.72rem;
-            font-weight: 800;
-            letter-spacing: 1px;
-            padding: 5px 14px;
-            border-radius: 20px;
-            margin-bottom: 14px;
+            animation: nudge-arrow 1.2s ease-in-out infinite;
         }
-        .upsell-modal h2 {
-            font-size: 1.5rem;
-            font-weight: 900;
-            color: var(--primary-blue);
-            line-height: 1.2;
-            margin-bottom: 8px;
-        }
-        .upsell-modal h2 em {
-            font-style: normal;
-            background-color: #FFBD00;
-            border-radius: 4px;
-            padding: 0 6px;
-        }
-        .upsell-sub {
-            font-size: 0.9rem;
-            color: var(--gray-text);
-            margin-bottom: 18px;
-        }
+        .card-nudge-arrows span:nth-child(2) { animation-delay: 0.18s; }
+        .card-nudge-arrows span:nth-child(3) { animation-delay: 0.36s; }
 
-        .upsell-lista {
-            list-style: none;
-            text-align: left;
-            border: 1px solid var(--border-color);
-            border-radius: 10px;
-            padding: 14px 16px;
-            margin-bottom: 16px;
-        }
-        .upsell-lista li {
-            display: flex;
-            align-items: center;
-            gap: 9px;
-            font-size: 0.88rem;
-            font-weight: 600;
-            color: var(--text-dark);
-            padding: 7px 0;
-            border-bottom: 1px dashed var(--border-color);
-        }
-        .upsell-lista li:last-child { border-bottom: none; }
-        .upsell-lista svg { width: 17px; height: 17px; color: #00C347; flex-shrink: 0; }
-        .upsell-lista .valor {
-            margin-left: auto;
-            font-size: 0.78rem;
-            color: #94a3b8;
-            text-decoration: line-through;
-            white-space: nowrap;
-        }
-        .upsell-total {
-            font-size: 0.85rem;
-            font-weight: 700;
-            color: var(--gray-text);
-            margin-bottom: 16px;
-        }
-        .upsell-total s { color: #ef4444; }
 
-        .upsell-precos {
-            background-color: #f4f7fb;
-            border-radius: 12px;
-            padding: 14px;
-            margin-bottom: 8px;
-        }
-        .upsell-de { font-size: 0.85rem; color: #94a3b8; text-decoration: line-through; }
-        .upsell-por {
-            font-size: 2.6rem;
-            font-weight: 900;
-            color: #00C347;
-            line-height: 1.1;
-        }
-        .upsell-por span { font-size: 1.1rem; vertical-align: super; }
-        .upsell-diferenca {
-            font-size: 0.85rem;
-            font-weight: 700;
-            color: var(--primary-blue);
-        }
-        .upsell-modal .btn-primary { width: 100%; margin: 16px 0 10px; }
-        .upsell-nao {
-            display: inline-block;
-            font-size: 0.8rem;
-            color: #94a3b8;
-            text-decoration: underline;
-        }
-        .upsell-nao:hover { color: var(--gray-text); }
+        .loss-box { padding: 12px; margin: 12px 0 11px 0; }
+        .loss-row { font-size: 0.85rem; padding: 6px 0; }
+        .loss-total { font-size: 0.9rem; padding-top: 10px; }
+        .loss-total span:last-child { font-size: 1.1rem; }
+        .upsell-flip { font-size: 0.9rem; padding: 10px; margin-bottom: 10px; }
+    }
 
-        /* No mobile o popup precisa caber inteiro na tela, sem rolagem.
-           Os cortes sao por ALTURA de viewport, que e a real restricao. */
-        @media (max-width: 768px) {
-            .upsell-overlay { padding: 10px; align-items: center; }
-            .upsell-modal { padding: 20px 16px 16px; }
-            .upsell-modal h2 { font-size: 1.25rem; }
-            .upsell-sub { font-size: 0.82rem; margin-bottom: 12px; }
-            .upsell-lista { padding: 8px 12px; margin-bottom: 10px; }
-            .upsell-lista li { padding: 5px 0; font-size: 0.78rem; }
-            .upsell-total { font-size: 0.76rem; margin-bottom: 10px; }
-            .upsell-precos { padding: 10px; }
-            .upsell-por { font-size: 2rem; }
-            .upsell-modal .btn-primary {
-                font-size: 0.88rem;
-                padding: 14px 12px;
-                margin: 12px 0 8px;
-            }
-        }
-        @media (max-height: 740px) {
-            .upsell-tag { font-size: 0.66rem; padding: 4px 12px; margin-bottom: 8px; }
-            .upsell-modal h2 { font-size: 1.08rem; }
-            .upsell-sub { display: none; }
-            .upsell-lista li { padding: 4px 0; font-size: 0.74rem; }
-            .upsell-total { font-size: 0.72rem; margin-bottom: 8px; }
-            .upsell-precos { padding: 8px; }
-            .upsell-por { font-size: 1.8rem; }
-            .upsell-diferenca { font-size: 0.75rem; }
-            .upsell-modal .btn-primary { padding: 12px; margin: 10px 0 6px; }
-            .upsell-nao { font-size: 0.72rem; }
-        }
-        @media (max-height: 620px) {
-            .upsell-modal { padding: 16px 14px 12px; }
-            .upsell-modal h2 { font-size: 0.98rem; }
-            .upsell-lista { padding: 5px 10px; margin-bottom: 8px; }
-            .upsell-lista li { padding: 3px 0; font-size: 0.7rem; }
-            .upsell-lista svg { width: 14px; height: 14px; }
-            .upsell-total { display: none; }
-            .upsell-por { font-size: 1.6rem; }
-            .upsell-modal .btn-primary { padding: 11px; margin: 8px 0 5px; }
-        }
-        /* celular deitado */
-        @media (max-height: 500px) {
-            .upsell-overlay { padding: 6px; }
-            .upsell-modal { padding: 12px 14px 10px; max-width: 420px; }
-            .upsell-tag { display: none; }
-            .upsell-modal h2 { font-size: 0.92rem; margin-bottom: 6px; }
-            .upsell-lista { padding: 4px 10px; margin-bottom: 6px; }
-            .upsell-lista li { padding: 2px 0; font-size: 0.66rem; }
-            .upsell-precos { padding: 6px; }
-            .upsell-de { font-size: 0.7rem; }
-            .upsell-por { font-size: 1.4rem; }
-            .upsell-diferenca { font-size: 0.68rem; }
-            .upsell-modal .btn-primary { padding: 10px; margin: 7px 0 4px; font-size: 0.8rem; }
-            .upsell-nao { font-size: 0.66rem; }
-            .upsell-fechar { width: 24px; height: 24px; top: 6px; right: 8px; }
-        }
-        /* telas deitadas muito baixas (ex.: iPhone SE 667x375) */
-        @media (max-height: 400px) {
-            .upsell-overlay { padding: 4px; }
-            .upsell-modal { padding: 10px 12px 8px; }
-            .upsell-modal h2 { font-size: 0.86rem; margin-bottom: 5px; }
-            .upsell-lista { padding: 3px 9px; margin-bottom: 5px; }
-            .upsell-lista li { padding: 1px 0; font-size: 0.62rem; }
-            .upsell-lista svg { width: 12px; height: 12px; }
-            .upsell-precos { padding: 5px; }
-            .upsell-por { font-size: 1.25rem; }
-            .upsell-modal .btn-primary { padding: 9px; margin: 6px 0 3px; }
-        }
+    /* ===== MODAL DE UPSELL: compacta em telas de pouca altura =====
+       O objetivo e o modal caber inteiro na tela SEM rolagem, em qualquer aparelho.
+       Aqui reduzimos o conteudo por altura de viewport; o fitUpsell() no JS e a
+       garantia final, aplicando uma escala se ainda assim faltar espaco.        */
 
-        /* o botao do plano basico agora e <button>: zera o padrao do navegador */
-        button.btn-outline-blue { border: none; cursor: pointer; font-family: inherit; }
+    @media (max-height: 800px) {
+        .upsell-modal { padding: 20px 20px; }
+        .upsell-title { font-size: 1.7rem; margin-bottom: 5px; }
+        .upsell-back { top: 11px; left: 12px; font-size: 0.85rem; }
+        .upsell-desc { font-size: 0.92rem; margin-bottom: 10px; line-height: 1.3; }
+        .loss-box { padding: 11px 13px; margin: 11px 0 10px 0; }
+        .loss-row { font-size: 0.83rem; padding: 5px 0; line-height: 1.25; }
+        .loss-total { font-size: 0.88rem; padding-top: 9px; }
+        .loss-total span:last-child { font-size: 1.05rem; }
+        .upsell-flip { font-size: 0.88rem; padding: 9px 11px; margin-bottom: 9px; line-height: 1.3; }
+        .upsell-price-old { font-size: 1.1rem; margin-bottom: -6px; }
+        .upsell-price { font-size: 2.4rem; margin: 4px 0; }
+        .upsell-note { font-size: 0.85rem; line-height: 1.3; margin-bottom: 3px; }
+        .upsell-btn-yes { font-size: 1.25rem; padding: 12px 10px; margin-top: 10px; }
+        .upsell-btn-no { margin-top: 9px; font-size: 0.75rem; }
+    }
 
-        /* ---------- RODAPE ---------- */
-        .site-footer {
-            background-color: #060c17;
-            color: #94a3b8;
-            padding: 45px 0;
-            text-align: center;
-            font-size: 0.85rem;
-        }
-        .site-footer .footer-logo {
-            font-size: 1.5rem;
-            font-weight: 900;
-            color: var(--yellow-accent);
-            letter-spacing: 1px;
-            margin-bottom: 12px;
-        }
-        .site-footer p { margin-bottom: 8px; }
-        .footer-disclaimer {
-            max-width: 720px;
-            margin: 0 auto;
-            font-size: 0.75rem;
-            color: #64748b;
-            line-height: 1.5;
-        }
-        @media (max-width: 768px) {
-            .site-footer { padding: 36px 0; }
-        }
-    </style>
+    @media (max-height: 700px) {
+        .upsell-overlay { padding: 6px; }
+        .upsell-modal { padding: 14px 15px; border-width: 3px; }
+        .upsell-title { font-size: 1.35rem; margin-bottom: 3px; line-height: 1.1; }
+        .upsell-back { top: 8px; left: 10px; font-size: 0.75rem; }
+        .upsell-back span { font-size: 0.95rem; }
+        .upsell-desc { font-size: 0.8rem; margin-bottom: 7px; line-height: 1.25; }
+        .loss-box { padding: 8px 10px; margin: 8px 0 7px 0; }
+        .loss-row { font-size: 0.74rem; padding: 3px 0; line-height: 1.2; }
+        .loss-total { font-size: 0.79rem; padding-top: 6px; }
+        .loss-total span:last-child { font-size: 0.92rem; }
+        .upsell-flip { font-size: 0.78rem; padding: 7px 9px; margin-bottom: 7px; line-height: 1.25; }
+        .upsell-price-old { font-size: 0.92rem; margin-bottom: -5px; }
+        .upsell-price { font-size: 1.9rem; margin: 2px 0; }
+        .upsell-note { font-size: 0.72rem; line-height: 1.25; margin-bottom: 2px; }
+        .upsell-btn-yes { font-size: 1.05rem; padding: 9px 8px; margin-top: 8px; }
+        .upsell-btn-no { margin-top: 7px; font-size: 0.68rem; }
+    }
+
+  </style>
 </head>
 <body>
 
-    <!-- Barra de escassez -->
-    <div id="top-timer-bar">
-        <i data-lucide="alarm-clock"></i> OFERTA ENCERRA EM: <span id="timer-display">15:00</span>
+  <!-- BARRA DE OFERTA NO TOPO -->
+  <a href="#checkout" id="top-timer-bar" style="display: block; text-decoration: none;">
+    <span class="tb-line">
+      CONDIÇÃO EXCLUSIVA LIBERADA:
+    </span>
+    <span class="tb-pill">ACESSO À MAIOR COLEÇÃO DE DESENHOS DA TV</span>
+  </a>
+
+  <!-- HERO SECTION -->
+  <section class="hero-section">
+    <div class="container">
+
+      <div class="hero-eyebrow">Se você cresceu nos anos 80, 90 ou 2000</div>
+
+      <h1 class="hero-headline bangers">
+        Sua Infância Está Salva<br>
+        Mais de 2.500 <span class="highlight">Desenhos Clássicos da TV</span>
+      </h1>
+
+      <p class="hero-subheadline">
+        Mate a saudade das manhãs da sua infância ou apresente para os seus filhos os desenhos que realmente valiam a pena assistir.
+      </p>
+
+      <!-- VSL CONTAINER -->
+      <!-- ⚠️ TROCAR: media-id abaixo precisa ser o ID do vídeo VSL novo (gravado/cortado pra esse produto) -->
+      <div class="vsl-container">
+        <script src="https://fast.wistia.com/player.js" async></script><script src="https://fast.wistia.com/embed/4oko3lnus0.js" async type="module"></script><style>wistia-player[media-id='4oko3lnus0']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/4oko3lnus0/swatch'); display: block; filter: blur(5px); padding-top:180.0%; }</style> <wistia-player media-id="4oko3lnus0" seo="false" aspect="0.5555555555555556"></wistia-player>
+      </div>
+
+      <a href="#checkout" class="cta-btn bangers">
+        QUERO REVIVER MINHA INFÂNCIA
+      </a>
+      <span class="cta-subtext cta-subtext-1l">Liberação na hora • Sem mensalidade • 30 dias de garantia</span>
+
+      <!-- CARROSSEL INFINITO COMO "IMAGEM" -->
+      <div class="carousel-wrapper">
+                                        <div class="carousel-track">
+          <!-- Bloco 1 -->
+          <img src="imagens/01.webp" class="carousel-item" alt="Os Jetsons" decoding="async" width="220" height="310">
+          <img src="imagens/02.webp" class="carousel-item" alt="O Máskara" decoding="async" width="220" height="310">
+          <img src="imagens/03.webp" class="carousel-item" alt="Pokémon" decoding="async" width="220" height="310">
+          <img src="imagens/04.webp" class="carousel-item" alt="Animaniacs" decoding="async" width="220" height="310">
+          <img src="imagens/05.webp" class="carousel-item" alt="The Loud House" decoding="async" width="220" height="310">
+          <img src="imagens/06.webp" class="carousel-item" alt="Tom e Jerry" decoding="async" width="220" height="310">
+          <img src="imagens/07.webp" class="carousel-item" alt="Teen Titans Go!" decoding="async" width="220" height="310">
+          <img src="imagens/08.webp" class="carousel-item" alt="Johnny Bravo" decoding="async" width="220" height="310">
+          <img src="imagens/09.webp" class="carousel-item" alt="Steven Universe" decoding="async" width="220" height="310">
+          <img src="imagens/10.webp" class="carousel-item" alt="Super Choque" decoding="async" width="220" height="310">
+          <img src="imagens/11.webp" class="carousel-item" alt="Scooby-Doo" decoding="async" width="220" height="310">
+          <img src="imagens/12.webp" class="carousel-item" alt="He-Man" decoding="async" width="220" height="310">
+          <img src="imagens/13.webp" class="carousel-item" alt="Caverna do Dragão" decoding="async" width="220" height="310">
+          <img src="imagens/15.webp" class="carousel-item" alt="Pica-Pau" decoding="async" width="220" height="310">
+          <img src="imagens/16.webp" class="carousel-item" alt="Corrida Maluca" decoding="async" width="220" height="310">
+          <img src="imagens/17.webp" class="carousel-item" alt="Luluzinha" decoding="async" width="220" height="310">
+          <img src="imagens/18.webp" class="carousel-item" alt="Mr. Bean" decoding="async" width="220" height="310">
+          <!-- Bloco 2 (clone loop) -->
+          <img src="imagens/01.webp" class="carousel-item" alt="Os Jetsons" decoding="async" width="220" height="310">
+          <img src="imagens/02.webp" class="carousel-item" alt="O Máskara" decoding="async" width="220" height="310">
+          <img src="imagens/03.webp" class="carousel-item" alt="Pokémon" decoding="async" width="220" height="310">
+          <img src="imagens/04.webp" class="carousel-item" alt="Animaniacs" decoding="async" width="220" height="310">
+          <img src="imagens/05.webp" class="carousel-item" alt="The Loud House" decoding="async" width="220" height="310">
+          <img src="imagens/06.webp" class="carousel-item" alt="Tom e Jerry" decoding="async" width="220" height="310">
+          <img src="imagens/07.webp" class="carousel-item" alt="Teen Titans Go!" decoding="async" width="220" height="310">
+          <img src="imagens/08.webp" class="carousel-item" alt="Johnny Bravo" decoding="async" width="220" height="310">
+          <img src="imagens/09.webp" class="carousel-item" alt="Steven Universe" decoding="async" width="220" height="310">
+          <img src="imagens/10.webp" class="carousel-item" alt="Super Choque" decoding="async" width="220" height="310">
+          <img src="imagens/11.webp" class="carousel-item" alt="Scooby-Doo" decoding="async" width="220" height="310">
+          <img src="imagens/12.webp" class="carousel-item" alt="He-Man" decoding="async" width="220" height="310">
+          <img src="imagens/13.webp" class="carousel-item" alt="Caverna do Dragão" decoding="async" width="220" height="310">
+          <img src="imagens/15.webp" class="carousel-item" alt="Pica-Pau" decoding="async" width="220" height="310">
+          <img src="imagens/16.webp" class="carousel-item" alt="Corrida Maluca" decoding="async" width="220" height="310">
+          <img src="imagens/17.webp" class="carousel-item" alt="Luluzinha" decoding="async" width="220" height="310">
+          <img src="imagens/18.webp" class="carousel-item" alt="Mr. Bean" decoding="async" width="220" height="310">
+        </div>
+      </div>
+
     </div>
+  </section>
 
-    <!-- Hero Section -->
-    <header class="hero">
-        <div class="container hero-container">
-            <div class="hero-content">
-                <div class="badge">
-                    <i data-lucide="award"></i> O MAIOR ACERVO DO BRASIL
-                </div>
-                <h1>REVIVA OS +2500<br>DESENHOS QUE<br><span>MARCARAM A<br>SUA INFÂNCIA</span></h1>
-                <p>Desenhos dos anos 80, 90 e 2000 reunidos em um só lugar, pra você rever ou mostrar pros seus filhos.</p>
-
-                <ul class="hero-features">
-                    <li><i data-lucide="monitor-smartphone"></i> Assista no celular,<br>Smart TV ou<br>computador</li>
-                    <li><i data-lucide="play-circle"></i> Vídeos<br>em MP4</li>
-                    <li><i data-lucide="lock"></i> Compra<br>única</li>
-                </ul>
-
-                <a href="#pricing" class="btn-primary">QUERO ACESSAR O ACERVO</a>
-            </div>
-            <div class="hero-image">
-                <div style="max-width: 340px; margin-left: auto; margin-right: auto; border: 6px solid #F5B915; border-radius: 12px; overflow: hidden;">
-                    <wistia-player media-id="4oko3lnus0" seo="false" aspect="0.5555555555555556"></wistia-player>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <!-- Nostalgia Section -->
-    <section class="nostalgia">
-        <div class="container nostalgia-container">
-            <div class="nostalgia-content">
-                <h2>Se só de ver essas<br>capas você já<br>sentiu saudade...</h2>
-                <p>Esse acervo foi feito pra quem cresceu grudado na TV vendo desenho e quer rever tudo aquilo, sem depender de streaming e sem ficar caçando episódio solto na internet.</p>
-            </div>
-            <div class="nostalgia-image">
-                <div class="carrossel" data-carrossel>
-                    <div class="carrossel-trilha">
-                        <img src="img/carrossel-01.webp" alt="Capas de desenhos antigos - seleção 1" width="933" height="521">
-                        <img src="img/carrossel-02.webp" alt="Capas de desenhos antigos - seleção 2" width="933" height="521">
-                        <img src="img/carrossel-03.webp" alt="Capas de desenhos antigos - seleção 3" width="933" height="521">
-                        <img src="img/carrossel-04.webp" alt="Capas de desenhos antigos - seleção 4" width="933" height="521">
-                        <img src="img/carrossel-05.webp" alt="Capas de desenhos antigos - seleção 5" width="933" height="521">
-                        <img src="img/carrossel-06.webp" alt="Capas de desenhos antigos - seleção 6" width="933" height="521">
-                        <img src="img/carrossel-07.webp" alt="Capas de desenhos antigos - seleção 7" width="933" height="521">
-                    </div>
-                    <button type="button" class="carrossel-seta prev" aria-label="Anterior"><i data-lucide="chevron-left"></i></button>
-                    <button type="button" class="carrossel-seta next" aria-label="Próxima"><i data-lucide="chevron-right"></i></button>
-                    <div class="carrossel-pontos">
-                        <button type="button" class="carrossel-ponto" aria-label="Ir para a seleção 1"></button>
-                        <button type="button" class="carrossel-ponto" aria-label="Ir para a seleção 2"></button>
-                        <button type="button" class="carrossel-ponto" aria-label="Ir para a seleção 3"></button>
-                        <button type="button" class="carrossel-ponto" aria-label="Ir para a seleção 4"></button>
-                        <button type="button" class="carrossel-ponto" aria-label="Ir para a seleção 5"></button>
-                        <button type="button" class="carrossel-ponto" aria-label="Ir para a seleção 6"></button>
-                        <button type="button" class="carrossel-ponto" aria-label="Ir para a seleção 7"></button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Features Section -->
-    <section class="features">
-        <div class="container features-container">
-            <div class="features-content">
-                <h2>O QUE VOCÊ RECEBE</h2>
-                <ul class="check-list">
-                    <li><i data-lucide="check-circle-2"></i> 2.500 desenhos clássicos dos anos 80, 90 e 2000</li>
-                    <li><i data-lucide="check-circle-2"></i> Vídeos em MP4 dublados em português</li>
-                    <li><i data-lucide="check-circle-2"></i> Assista no celular, tablet, Smart TV ou PC</li>
-                    <li><i data-lucide="check-circle-2"></i> Acesso vitalício: pague uma vez, tenha pra sempre</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section class="testimonials">
-        <div class="container">
-            <h2 class="text-center testimonials-title">QUEM JÁ ACESSOU, APROVOU</h2>
-            <div class="divider"></div>
-            <p class="text-center testimonials-subtitle">Veja o que alguns colecionadores acharam do acervo.</p>
-
-            <div class="testimonials-grid">
-                <!-- Testimonial 1 -->
-                <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <div class="testimonial-avatar"><img src="img/depo-1.webp" alt="Vanessa Moreira" width="120" height="120" loading="lazy" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover; display: block;"></div>
-                        <div class="testimonial-info">
-                            <div class="stars">
-                                <i data-lucide="star" fill="currentColor"></i><i data-lucide="star" fill="currentColor"></i><i data-lucide="star" fill="currentColor"></i><i data-lucide="star" fill="currentColor"></i><i data-lucide="star" fill="currentColor"></i>
-                            </div>
-                            <h4>Vanessa Moreira</h4>
-                        </div>
-                    </div>
-                    <p>"Encontrei o desenho que eu assistia todo fim de tarde na infância e me emocionei de verdade! Separado por década, facílimo de localizar."</p>
-                </div>
-                <!-- Testimonial 2 -->
-                <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <div class="testimonial-avatar"><img src="img/depo-2.webp" alt="Rogério Campos" width="120" height="120" loading="lazy" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover; display: block;"></div>
-                        <div class="testimonial-info">
-                            <div class="stars">
-                                <i data-lucide="star" fill="currentColor"></i><i data-lucide="star" fill="currentColor"></i><i data-lucide="star" fill="currentColor"></i><i data-lucide="star" fill="currentColor"></i><i data-lucide="star" fill="currentColor"></i>
-                            </div>
-                            <h4>Rogério Campos</h4>
-                        </div>
-                    </div>
-                    <p>"Peguei pra mostrar aos meus filhos o que eu assistia na idade deles. Eles adoraram e eu ainda revi vários que já tinha esquecido."</p>
-                </div>
-                <!-- Testimonial 3 -->
-                <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <div class="testimonial-avatar"><img src="img/depo-3.webp" alt="Cristiane Barbosa" width="120" height="120" loading="lazy" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover; display: block;"></div>
-                        <div class="testimonial-info">
-                            <div class="stars">
-                                <i data-lucide="star" fill="currentColor"></i><i data-lucide="star" fill="currentColor"></i><i data-lucide="star" fill="currentColor"></i><i data-lucide="star" fill="currentColor"></i><i data-lucide="star" fill="currentColor"></i>
-                            </div>
-                            <h4>Cristiane Barbosa</h4>
-                        </div>
-                    </div>
-                    <p>"Imaginei que viesse uma cópia mal feita, mas chegou tudo certinho em pastas e com resolução excelente. Em uma semana já emendei uns 30 episódios."</p>
-                </div>
-            </div>
-
-            <div class="text-center section-cta">
-                <a href="#pricing" class="btn-primary">QUERO GARANTIR O MEU AGORA</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Bonuses Section 2 (Details) -->
-    <section class="bonuses-details-section">
-        <div class="container">
-            <h2 class="text-center text-white">E VOCÊ NÃO RECEBE APENAS OS <span class="highlight">DESENHOS ANTIGOS...</span></h2>
-            <h3 class="text-center yellow-text">AO GARANTIR SEU ACESSO HOJE, VOCÊ TAMBÉM RECEBE 4 ACERVOS EXTRAS COMO BÔNUS!</h3>
-
-            <div class="bonuses-details-grid">
-                <!-- Bonus 1 -->
-                <div class="bonus-detail-box">
-                    <div class="box-header">BÔNUS #1</div>
-                    <div class="box-title">15.000 HQS DE HERÓIS</div>
-                    <div class="box-image"><img src="img/bonus-01.webp" alt="15.000 HQs de heróis da Marvel e DC" width="501" height="501" loading="lazy"></div>
-                    <p>Uma montanha de gibis e quadrinhos dos universos Marvel &amp; DC, com todos os personagens dentro.</p>
-                    <div class="box-value"><s>De: R$ 27,90</s> | Hoje Sai de Graça</div>
-                </div>
-                <!-- Bonus 2 -->
-                <div class="bonus-detail-box">
-                    <div class="box-header">BÔNUS #2</div>
-                    <div class="box-title">15.000 MANGÁS CLÁSSICOS</div>
-                    <div class="box-image"><img src="img/bonus-02.webp" alt="15.000 mangás clássicos" width="500" height="501" loading="lazy"></div>
-                    <p>Um coleção gigante e épica com os melhores mangás pra você ler de onde estiver.</p>
-                    <div class="box-value"><s>De: R$ 39,90</s> | Hoje Sai de Graça</div>
-                </div>
-                <!-- Bonus 3 -->
-                <div class="bonus-detail-box">
-                    <div class="box-header">BÔNUS #3</div>
-                    <div class="box-title">TODAS AS EDIÇÕES DA TURMA DA MÔNICA JOVEM</div>
-                    <div class="box-image"><img src="img/bonus-03.webp" alt="Todas as edições da Turma da Mônica Jovem" width="500" height="500" loading="lazy"></div>
-                    <p>A fase adolescente e repaginada da turma, com Mônica, Cebolinha e a companhia já crescidos, em histórias novas para quem cresceu junto.</p>
-                    <div class="box-value"><s>De: R$ 34,90</s> | Hoje Sai de Graça</div>
-                </div>
-                <!-- Bonus 4 -->
-                <div class="bonus-detail-box">
-                    <div class="box-header">BÔNUS #4</div>
-                    <div class="box-title">14.000 GIBIS CLÁSSICOS DA TURMA DA MÔNICA</div>
-                    <div class="box-image"><img src="img/bonus-04.webp" alt="14.000 gibis clássicos da Turma da Mônica" width="501" height="501" loading="lazy"></div>
-                    <p>As revistinhas originais da Turma da Mônica, exatamente do jeito que você folheava na infância.</p>
-                    <div class="box-value"><s>De: R$ 29,90</s> | Hoje Sai de Graça</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Pricing Section -->
-    <section id="pricing" class="pricing-section">
-        <div class="container">
-            <h2 class="section-title-lines">Escolha Seu Acesso</h2>
-            <p class="text-center">Comece pelo básico ou leve o acervo completo com todos os bônus.</p>
-
-            <div class="pricing-grid">
-                <!-- Basic Offer -->
-                <div class="pricing-card basic">
-                    <div class="card-icon"><i data-lucide="star"></i></div>
-                    <h3>Acesso Básico</h3>
-                    <div class="price"><span>R$</span> 12<span>,90</span></div>
-                    <p class="ideal-for">Ideal para quem quer entrar<br>agora pagando pouco.</p>
-                    <ul class="pricing-features">
-                        <li><i data-lucide="check" class="text-blue"></i> 400 desenhos clássicos selecionados</li>
-                        <li><i data-lucide="check" class="text-blue"></i> Download imediato</li>
-                        <li><i data-lucide="check" class="text-blue"></i> Acesso vitalício</li>
-                        <li><i data-lucide="check" class="text-blue"></i> Perfeito para testar o acervo</li>
-                    </ul>
-                    <button type="button" class="btn-outline-blue" data-abre-upsell>QUERO O BÁSICO</button>
-
-                    <div class="dica-premium">
-                        <strong>AINDA DÁ TEMPO DE LEVAR A MELHOR OPÇÃO!</strong>
-                        <span>O Acesso Completo inclui 2.500 desenhos, atualizações e 4 bônus exclusivos.</span>
-                        <div class="dica-setas">
-                            <i data-lucide="chevron-down"></i>
-                            <i data-lucide="chevron-down"></i>
-                            <i data-lucide="chevron-down"></i>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Premium Offer -->
-                <div class="pricing-card premium">
-                    <div class="most-chosen">⭐ MAIS ESCOLHIDA ⭐</div>
-                    <h3>Acesso Completo + Bônus</h3>
-                    <div class="price text-orange"><span>R$</span> 29<span>,90</span></div>
-                    <p class="ideal-for">Leve o acervo completo<br>e os bônus exclusivos.</p>
-                    <ul class="pricing-features">
-                        <li><i data-lucide="check-circle-2" class="text-orange"></i> 2.500 desenhos antigos</li>
-                        <li><i data-lucide="check-circle-2" class="text-orange"></i> Organizados por década e por nome</li>
-                        <li><i data-lucide="check-circle-2" class="text-orange"></i> Acesso imediato e vitalício</li>
-                        <li><i data-lucide="check-circle-2" class="text-orange"></i> Enviado no e-mail e no WhatsApp</li>
-                        <li><i data-lucide="check-circle-2" class="text-orange"></i> <span><span class="bonus-tag">Bônus:</span> 15.000 HQs de Heróis</span></li>
-                        <li><i data-lucide="check-circle-2" class="text-orange"></i> <span><span class="bonus-tag">Bônus:</span> 15.000 Mangás Clássicos</span></li>
-                        <li><i data-lucide="check-circle-2" class="text-orange"></i> <span><span class="bonus-tag">Bônus:</span> todas as edições da Turma da Mônica Jovem</span></li>
-                        <li><i data-lucide="check-circle-2" class="text-orange"></i> <span><span class="bonus-tag">Bônus:</span> 14.000 Gibis clássicos da Turma da Mônica</span></li>
-                    </ul>
-
-                    <div class="badges-row">
-                        <span class="small-badge"><i data-lucide="shield-check" style="width: 14px; height:14px;"></i> Qualidade HD</span>
-                        <span class="small-badge"><i data-lucide="star" style="width: 14px; height:14px;"></i> Dublado em PT-BR</span>
-                        <span class="small-badge"><i data-lucide="refresh-cw" style="width: 14px; height:14px;"></i> Acesso Vitalício</span>
-                    </div>
-
-                    <a href="https://pay.lowify.com.br/checkout?product_id=j4KDUE" class="btn-primary">QUERO O COMPLETO <i data-lucide="chevron-right"></i></a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Trust / Guarantee Section -->
-    <section class="trust-section">
-        <div class="trust-bar">
-            <div class="container trust-bar-container">
-                <div><i data-lucide="check-circle"></i> COMPRA 100% SEGURA</div>
-                <div><i data-lucide="credit-card"></i> PAGAMENTO PROTEGIDO</div>
-                <div><i data-lucide="zap"></i> ACESSO IMEDIATO APÓS APROVAÇÃO</div>
-            </div>
-        </div>
-
-        <div class="container guarantee-container">
-            <div class="guarantee-seal" style="background: none; border: none; box-shadow: none;">
-                <img src="img/garantia-30-dias.webp" alt="Selo de garantia de 30 dias" width="500" height="500" loading="lazy" style="width: 100%; height: 100%; object-fit: contain; display: block;">
-            </div>
-            <div class="guarantee-text">
-                <h2>30 DIAS DE GARANTIA</h2>
-                <p>Confiamos totalmente na qualidade do nosso portal. Se por qualquer razão os desenhos não te agradarem, é só mandar um e-mail dentro de 30 dias que devolvemos cada centavo, sem questionamento nenhum!</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ Section -->
-    <section class="faq-section">
-        <div class="container faq-container">
-            <h2>DÚVIDAS FREQUENTES</h2>
-            <div class="faq-list">
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span class="faq-number">1</span>
-                        Como vou receber o acervo?
-                        <i data-lucide="chevron-down" class="faq-icon"></i>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Assim que o pagamento for confirmado, você recebe o link de acesso no seu e-mail e no WhatsApp, em poucos minutos.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span class="faq-number">2</span>
-                        Funciona na Smart TV e no celular?
-                        <i data-lucide="chevron-down" class="faq-icon"></i>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Sim. Os desenhos estão em MP4, um formato universal: dá para assistir no celular Android ou iPhone, tablet, Smart TV ou computador.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span class="faq-number">3</span>
-                        Os desenhos são dublados em português?
-                        <i data-lucide="chevron-down" class="faq-icon"></i>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Sim. A grande maioria do acervo está dublada em português, com os episódios organizados por nome e temporada para facilitar sua busca.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span class="faq-number">4</span>
-                        Tem mensalidade?
-                        <i data-lucide="chevron-down" class="faq-icon"></i>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Não. O pagamento é único e o acesso é vitalício: você paga uma vez e assiste pra sempre.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="text-center section-cta">
-                <a href="#pricing" class="btn-primary">SIM! QUERO GARANTIR MEU ACESSO</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Popup de upsell: abre ao clicar na oferta de R$ 12,90 -->
-    <div id="upsell" class="upsell-overlay" role="dialog" aria-modal="true" aria-labelledby="upsell-titulo">
-        <div class="upsell-modal">
-            <button type="button" class="upsell-fechar" data-fecha-upsell aria-label="Fechar">&times;</button>
-
-            <div class="upsell-tag">ESPERE! SÓ MAIS UMA COISA</div>
-            <h2 id="upsell-titulo">Por <em>R$ 7,00</em> a mais<br>você leva tudo</h2>
-            <p class="upsell-sub">Veja o que fica de fora se você seguir com o Acesso Básico:</p>
-
-            <ul class="upsell-lista">
-                <li><i data-lucide="check-circle-2"></i> 2.100 desenhos a mais <span class="valor">R$ 17,00</span></li>
-                <li><i data-lucide="check-circle-2"></i> 15.000 HQs de Heróis <span class="valor">R$ 27,90</span></li>
-                <li><i data-lucide="check-circle-2"></i> 15.000 Mangás Clássicos <span class="valor">R$ 39,90</span></li>
-                <li><i data-lucide="check-circle-2"></i> Turma da Mônica Jovem <span class="valor">R$ 34,90</span></li>
-                <li><i data-lucide="check-circle-2"></i> 14.000 Gibis da Turma da Mônica <span class="valor">R$ 29,90</span></li>
-            </ul>
-
-            <p class="upsell-total">Tudo isso vale <s>R$ 149,60</s> e hoje entra junto sem custo extra.</p>
-
-            <div class="upsell-precos">
-                <div class="upsell-de">De R$ 29,90</div>
-                <div class="upsell-por"><span>R$</span> 19,90</div>
-                <div class="upsell-diferenca">São apenas R$ 7,00 a mais que o básico</div>
-            </div>
-
-            <a href="https://pay.lowify.com.br/checkout?product_id=4VVC5O" class="btn-primary">QUERO TUDO POR R$ 19,90</a>
-            <a href="https://pay.lowify.com.br/checkout?product_id=3G75Xw" class="upsell-nao">Não, quero seguir com o básico de R$ 12,90</a>
-        </div>
+  <!-- DOR / IDENTIFICAÇÃO -->
+  <section class="pain-section">
+    <div class="container">
+      <h2 class="pain-title bangers">VOCÊ JÁ TENTOU ACHAR<br>E NÃO ACHOU</h2>
+      <div class="pain-list">
+        <div class="pain-item"><span class="pain-x">❌</span><span>No <strong>YouTube</strong> só aparece episódio picotado, com marca d'água atravessada na tela, áudio fora de sincronia e anúncio bem no melhor momento.</span></div>
+        <div class="pain-item"><span class="pain-x">❌</span><span>Na <strong>Netflix, Disney+ e Max</strong> você digita o nome do desenho e o resultado é sempre o mesmo: "nenhum título encontrado".</span></div>
+        <div class="pain-item"><span class="pain-x">❌</span><span>Os sites de "assistir grátis online" travam no meio, pedem cadastro, enchem a tela de pop-up e o episódio nunca carrega até o fim.</span></div>
+        <div class="pain-item"><span class="pain-x">❌</span><span>E quando enfim aparece alguma coisa, está <strong>legendado ou com áudio original</strong>, não é aquela dublagem que você ouvia sentado no chão da sala.</span></div>
+      </div>
+      <div class="pain-turn">
+        Aí você fecha o celular e sobra aquele gostinho de <em>"eu queria tanto ver aquilo de novo"</em>.<br><br>
+        <strong>Os Clássicos dos Desenhos existe exatamente por isso.</strong><br>Foram meses garimpando, baixando, renomeando e organizando episódio por episódio, pra você nunca mais precisar procurar.
+      </div>
     </div>
+  </section>
 
-    <footer class="site-footer">
-        <div class="container">
-            <div class="footer-logo">CLÁSSICOS DOS DESENHOS</div>
-            <p>Clássicos dos Desenhos © 2026 – Todos os direitos reservados.</p>
-            <p class="footer-disclaimer">Este site não faz parte e não tem afiliação com a Disney, Warner Bros., Cartoon Network, Hanna-Barbera, Nickelodeon, Universal, Mattel, Facebook ou Google.</p>
+  <!-- O QUE VOCÊ RECEBE -->
+  <section class="checklist-section">
+    <div class="container text-center">
+      <h2 class="section-title bangers">O QUE VOCÊ TERÁ ACESSO:</h2>
+      <div class="checklist-grid" style="margin-top: 32px; text-align: left;">
+        <div class="check-item"><span class="check-icon">✓</span><span>2.500 desenhos completos dos anos 80, 90 e 2000</span></div>
+        <div class="check-item"><span class="check-icon">✓</span><span>Com a dublagem clássica em português</span></div>
+        <div class="check-item"><span class="check-icon">✓</span><span>Em MP4: celular, tablet, Smart TV, PC ou pen drive</span></div>
+        <div class="check-item"><span class="check-icon">✓</span><span>Organizados por década, nome e temporada</span></div>
+        <div class="check-item"><span class="check-icon">✓</span><span>Baixa uma vez e assiste offline quando quiser</span></div>
+        <div class="check-item"><span class="check-icon">✓</span><span>Acesso vitalício: paga uma vez, é seu pra sempre</span></div>
+      </div>
+
+      <div style="margin-top: 40px;">
+        <a href="#checkout" class="cta-btn bangers" style="margin-top: 30px;">QUERO ASSISTIR AGORA</a>
+        <span class="cta-subtext cta-subtext-1l">Pagamento único • Acesso vitalício • 30 dias de garantia</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- PERSONAGENS POR CATEGORIA -->
+  <section class="characters-section">
+    <div class="container">
+      <h2 class="bangers text-center" style="font-size: 3rem; color: var(--gold); text-shadow: 0 4px 10px rgba(0,0,0,0.5);">QUAL DESSES VOCÊ ASSISTIA?</h2>
+      <p class="text-center" style="color: var(--text); max-width: 620px; margin: 10px auto 0 auto; font-size: 1.1rem; line-height: 1.5;">Se você reconheceu 3 ou mais, esse acervo foi feito pra você. E olha que isso aqui ainda é só uma parte da lista:</p>
+      <div class="nostalgia-wall">
+        <span class="wall-tag">He-Man</span>
+        <span class="wall-tag">Pokémon</span>
+        <span class="wall-tag">Tom & Jerry</span>
+        <span class="wall-tag">Dragon Ball Z</span>
+        <span class="wall-tag">Thundercats</span>
+        <span class="wall-tag">Bob Esponja</span>
+        <span class="wall-tag">Cavaleiros do Zodíaco</span>
+        <span class="wall-tag">Pica-Pau</span>
+        <span class="wall-tag">X-Men</span>
+        <span class="wall-tag">Naruto</span>
+        <span class="wall-tag">Tartarugas Ninja</span>
+        <span class="wall-tag">Scooby-Doo</span>
+        <span class="wall-tag">Sailor Moon</span>
+        <span class="wall-tag">Caverna do Dragão</span>
+        <span class="wall-tag">Laboratório de Dexter</span>
+        <span class="wall-tag">Transformers</span>
+        <span class="wall-tag">Digimon</span>
+        <span class="wall-tag">Pernalonga</span>
+        <span class="wall-tag">Batman</span>
+        <span class="wall-tag">She-Ra</span>
+        <span class="wall-tag">Meninas Superpoderosas</span>
+        <span class="wall-tag">Yu-Gi-Oh!</span>
+        <span class="wall-tag">Os Flintstones</span>
+        <span class="wall-tag">DuckTales</span>
+        <span class="wall-tag">Dragon Ball</span>
+        <span class="wall-tag">Coragem, o Cão Covarde</span>
+        <span class="wall-tag">GI Joe</span>
+        <span class="wall-tag">Animaniacs</span>
+        <span class="wall-tag">Beyblade</span>
+        <span class="wall-tag">Os Jetsons</span>
+        <span class="wall-tag">Homem-Aranha</span>
+        <span class="wall-tag">Pinky e o Cérebro</span>
+        <span class="wall-tag">Jimmy Neutron</span>
+        <span class="wall-tag">Os Smurfs</span>
+        <span class="wall-tag">Card Captors Sakura</span>
+        <span class="wall-tag">Hey Arnold</span>
+        <span class="wall-tag">Kim Possible</span>
+        <span class="wall-tag">Gargoyles</span>
+        <span class="wall-tag">Tico e Teco</span>
+        <span class="wall-tag">Ed, Edd e Eddy</span>
+        <span class="wall-tag">Capitão Planeta</span>
+        <span class="wall-tag">Rugrats</span>
+        <span class="wall-tag">Inuyasha</span>
+        <span class="wall-tag">Darkwing Duck</span>
+        <span class="wall-tag">Avatar</span>
+        <span class="wall-tag">Mickey Mouse</span>
+        <span class="wall-tag">Padrinhos Mágicos</span>
+        <span class="wall-tag">Johnny Bravo</span>
+        <span class="wall-tag">Ursinhos Carinhosos</span>
+        <span class="wall-tag">Luluzinha</span>
+        <span class="wall-tag">Danny Phantom</span>
+        <span class="wall-tag">Popeye</span>
+        <span class="wall-tag">Foster's Home</span>
+        <span class="wall-tag">Teen Titans</span>
+        <span class="wall-tag">Garfield</span>
+        <span class="wall-tag">Doug Funnie</span>
+        <span class="wall-tag">Ben 10</span>
+        <span class="wall-tag">Penelope Charmosa</span>
+        <span class="wall-tag">Samurai Jack</span>
+        <span class="wall-tag">Charlie Brown</span>
+        <span class="wall-tag">Corrida Maluca</span>
+        <span class="wall-tag">Batman Beyond</span>
+        <span class="wall-tag">Pato Donald</span>
+        <span class="wall-tag">Alvin e os Esquilos</span>
+        <span class="wall-tag">Chip e Dale</span>
+        <span class="wall-tag">Superman</span>
+        <span class="wall-tag">Astro Boy</span>
+        <span class="wall-tag">One Piece</span>
+      </div>
+      <div class="text-center tags-cta-block">
+        <a href="#checkout" class="cta-btn bangers">QUERO ASSISTIR TUDO HOJE</a>
+        <span class="cta-subtext cta-subtext-1l">Pagamento único • Acesso vitalício • 30 dias de garantia</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- BÔNUS EXCLUSIVOS -->
+  <section class="bonus-section">
+    <div class="container">
+      <h2 class="bangers text-center" style="font-size: 3.5rem; color: var(--gold); text-shadow: 0 4px 10px rgba(0,0,0,0.5);">OS BÔNUS QUE VÃO JUNTO</h2>
+      <div class="bonus-grid">
+
+        <div class="bonus-card">
+          <div class="bonus-label">BÔNUS #1</div>
+          <div class="bonus-title">15.000 HQs de Heróis</div>
+          <img src="imagens/B01.webp" alt="Mockup 15.000 HQs de Heróis" style="width: 100%; max-width: 250px; margin: 0 auto 15px auto; display: block; filter: drop-shadow(0 10px 15px rgba(0,0,0,0.5));">
+          <div class="bonus-desc">Uma montanha de gibis e quadrinhos dos universos Marvel &amp; DC, com todos os personagens dentro.</div>
+          <div class="bonus-price"><span>De: R$ 27,90</span> | Hoje Sai de Graça</div>
         </div>
-    </footer>
 
-    <script src="script.js"></script>
-    <script>
-    /* ---------------------------------------------------------
-       Contagem regressiva da barra do topo (15 minutos)
-       --------------------------------------------------------- */
-    const display = document.querySelector('#timer-display');
-    if (display) {
-        let remaining = 15 * 60;
+        <div class="bonus-card">
+          <div class="bonus-label">BÔNUS #2</div>
+          <div class="bonus-title">15.000 Mangás Clássicos</div>
+          <img src="imagens/B02.webp" alt="Mockup 15.000 Mangás Clássicos" style="width: 100%; max-width: 250px; margin: 0 auto 15px auto; display: block; filter: drop-shadow(0 10px 15px rgba(0,0,0,0.5));">
+          <div class="bonus-desc">Um coleção gigante e épica com os melhores mangás pra você ler de onde estiver.</div>
+          <div class="bonus-price"><span>De: R$ 39,90</span> | Hoje Sai de Graça</div>
+        </div>
 
-        const tick = () => {
-            const minutes = String(Math.floor(remaining / 60)).padStart(2, '0');
-            const seconds = String(remaining % 60).padStart(2, '0');
-            display.textContent = minutes + ':' + seconds;
+        <div class="bonus-card">
+          <div class="bonus-label">BÔNUS #3</div>
+          <div class="bonus-title">Todas as Edições da Turma da Mônica Jovem</div>
+          <img src="imagens/B03.webp" alt="Mockup Turma da Mônica Jovem" style="width: 100%; max-width: 250px; margin: 0 auto 15px auto; display: block; filter: drop-shadow(0 10px 15px rgba(0,0,0,0.5));">
+          <div class="bonus-desc">A fase adolescente e repaginada da turma, com Mônica, Cebolinha e a companhia já crescidos, em histórias novas para quem cresceu junto.</div>
+          <div class="bonus-price"><span>De: R$ 34,90</span> | Hoje Sai de Graça</div>
+        </div>
 
-            if (remaining <= 0) {
-                clearInterval(countdown);
-                return;
-            }
-            remaining--;
-        };
+<div class="bonus-card">
+          <div class="bonus-label">BÔNUS #4</div>
+          <div class="bonus-title">14.000 Gibis Clássicos da Turma da Mônica</div>
+          <img src="imagens/B04.webp" alt="Mockup 14.000 Gibis Clássicos da Turma da Mônica" style="width: 100%; max-width: 250px; margin: 0 auto 15px auto; display: block; filter: drop-shadow(0 10px 15px rgba(0,0,0,0.5));">
+          <div class="bonus-desc">As revistinhas originais da Turma da Mônica, exatamente do jeito que você folheava na infância.</div>
+          <div class="bonus-price"><span>De: R$ 29,90</span> | Hoje Sai de Graça</div>
+        </div>
 
-        tick();
-        const countdown = setInterval(tick, 1000);
+        <!-- ⚠️ Adicione aqui os bônus extras que você for incluir (o grid se ajusta automaticamente) -->
+
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials-section">
+    <div class="container text-center">
+      <h2 class="bangers" style="font-size: 3rem; color: var(--gold);">DEPOIMENTOS REAIS DE QUEM JÁ ADQUIRIU</h2>
+      <div class="testi-grid">
+        <div class="testi-card">
+          <img src="imagens/vanessa.webp" alt="Vanessa Moreira" class="testi-avatar" decoding="async" width="75" height="75">
+          <div class="testi-stars">★★★★★</div>
+          <div class="testi-text">"Coloquei na TV pro meu filho de 7 anos ver o que eu assistia na idade dele. Ele largou o celular na hora. Vale cada centavo só por essa sensação."</div>
+          <div class="testi-author">Vanessa Moreira</div>
+        </div>
+        <div class="testi-card">
+          <img src="imagens/rogerio.webp" alt="Rogério Campos" class="testi-avatar" decoding="async" width="75" height="75">
+          <div class="testi-stars">★★★★★</div>
+          <div class="testi-text">"Achei desenhos que eu nem lembrava o nome, só lembrava da música de abertura. Foi uma viagem no tempo."</div>
+          <div class="testi-author">Rogério Campos</div>
+        </div>
+        <div class="testi-card">
+          <img src="imagens/cristiane.webp" alt="Cristiane Barbosa" class="testi-avatar" decoding="async" width="75" height="75">
+          <div class="testi-stars">★★★★★</div>
+          <div class="testi-text">"O que eu mais gostei foi a organização. Não é aquele monte de link quebrado da internet. Baixei no pendrive e coloquei direto na televisão."</div>
+          <div class="testi-author">Cristiane Barbosa</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PURCHASE CARDS -->
+  <section class="purchase-section" id="checkout">
+    <div class="container text-center" style="margin-bottom: 35px;">
+      <h2 class="bangers" style="font-size: 3rem; color: #0187F8; margin: 0 0 8px 0; text-shadow: 0 4px 10px rgba(0,0,0,0.5);">Escolha Seu Acesso</h2>
+      <p style="color: var(--text); max-width: 560px; margin: 0 auto; font-size: 1.05rem; line-height: 1.5;">Compare e veja por que <strong style="color:#FFF;">8 em cada 10 pessoas levam o completo</strong>.</p>
+    </div>
+    <div class="container">
+      <div class="purchase-cards-wrapper">
+
+        <!-- CARD 1 -->
+        <div class="purchase-card card-basic">
+          <div><div class="purchase-badge badge-basic">ENTRADA</div></div>
+          <div class="purchase-title title-basic bangers">ACESSO BÁSICO</div>
+          <div class="purchase-price bangers">R$ 12,90</div>
+          <div style="color: var(--text); font-size: 0.9rem; margin: -8px 0 18px 0;">pra quem só quer experimentar</div>
+
+          <div class="purchase-benefits">
+            <div class="purchase-benefit-item"><i>✔</i> 400 desenhos selecionados</div>
+            <div class="purchase-benefit-item"><i>✔</i> Download imediato</div>
+            <div class="purchase-benefit-item"><i>✔</i> Acesso vitalício</div>
+            <div class="purchase-benefit-item" style="color: #7A7A88;">✕ Sem os outros 2.100 desenhos</div>
+            <div class="purchase-benefit-item" style="color: #7A7A88;">✕ Sem os bônus (44.000 HQs e gibis)</div>
+          </div>
+
+          <button onclick="openUpsell()" class="cta-btn btn-muted bangers" style="font-size: 1.35rem; padding: 15px 10px; width: 100%; box-sizing: border-box; font-family: 'Bangers', cursive;">QUERO SÓ O BÁSICO</button>
+
+          <div class="purchase-footer">
+            <div>🔒 Compra 100% segura</div>
+          </div>
+        </div>
+
+        <div class="card-nudge">
+          <div class="card-nudge-title">Espera, olha isso antes de escolher</div>
+          Por <strong>R$ 17,00 a mais</strong> você leva <strong>2.100 desenhos a mais</strong> e ainda 44.000 gibis, HQs e mangás. É o que 8 em cada 10 pessoas escolhem.
+          <div class="card-nudge-arrows"><span>▼</span><span>▼</span><span>▼</span></div>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="purchase-card card-premium">
+          <div><div class="purchase-badge badge-premium">8 EM CADA 10 LEVAM ESSE</div></div>
+          <div class="purchase-title title-premium bangers">COMPLETO + BÔNUS</div>
+          <div style="color: #9A9AA6; text-decoration: line-through; font-weight: 900; font-size: 1.15rem;">De R$ 229,60</div>
+          <div class="purchase-price bangers">R$ 29,90</div>
+          <div style="color: var(--text); font-size: 0.9rem; margin: -8px 0 18px 0;">pagamento único no Pix</div>
+
+          <div class="purchase-benefits">
+            <div class="purchase-benefit-item"><i>✔</i> <span>Os <strong>2.500 desenhos completos</strong> (2.100 a mais que o básico)</span></div>
+            <div class="purchase-benefit-item"><i>✔</i> Dublados e organizados por década, nome e temporada</div>
+            <div class="purchase-benefit-item"><i>✔</i> Acesso vitalício, sem mensalidade</div>
+            <div class="purchase-benefit-item"><i>✔</i> Liberação na hora + garantia de 30 dias</div>
+            <div style="background: rgba(255, 214, 0, 0.1); border: 1px solid var(--primary); border-radius: 10px; padding: 15px; margin-top: 5px; box-shadow: inset 0 0 15px rgba(1,135,248,0.08);">
+              <div style="font-weight: 900; color: var(--gold); margin-bottom: 10px; font-size: 1.1rem; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">🎁 BÔNUS EXCLUSIVOS</div>
+              <div style="display: flex; flex-direction: column; gap: 10px;">
+                <div class="purchase-benefit-item" style="color: #FFF;"><i>✔</i> 15.000 HQs da Marvel e DC</div>
+                <div class="purchase-benefit-item" style="color: #FFF;"><i>✔</i> 15.000 Mangás Clássicos</div>
+                <div class="purchase-benefit-item" style="color: #FFF;"><i>✔</i> Todas as edições da Turma da Mônica Jovem</div>
+                <div class="purchase-benefit-item" style="color: #FFF;"><i>✔</i> 14.000 gibis clássicos da Mônica</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ⚠️ TROCAR: link do checkout (Tilim/Lowify/Kiwify) do plano COMPLETO -->
+          <a href="https://ggcheckout.app/checkout/v4/FfRVE7SpdrNHUQa20xdC" class="cta-btn btn-premium bangers" style="font-size: 1.5rem; padding: 15px 10px; width: 100%; box-sizing: border-box;">SIM! QUERO TUDO</a>
+
+          <div class="purchase-footer">
+            <div>🔒 Compra 100% segura</div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- GUARANTEE SECTION -->
+  <section class="guarantee-section" id="garantia">
+    <div class="container" style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+      <img src="imagens/selo-de-garantia-30-dias-ouro.png" alt="Selo de Garantia 30 Dias Ouro" class="guarantee-badge" decoding="async" width="280" height="280">
+      <div style="text-align: center; max-width: 700px;">
+        <h2 class="bangers">30 DIAS DE GARANTIA</h2>
+        <p>Confiamos totalmente na qualidade do nosso portal. Se por qualquer razão os desenhos não te agradarem, é só mandar um e-mail dentro de 30 dias que devolvemos cada centavo, sem questionamento nenhum!</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq-section">
+    <div class="container">
+      <h2 class="bangers text-center" style="font-size: 3rem; margin-bottom: 40px; color: var(--gold);">PERGUNTAS FREQUENTES</h2>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">Não dá pra achar tudo isso de graça no YouTube?</div>
+        <div class="faq-answer">Dá pra achar alguma coisa: episódio picotado, com marca d'água atravessada, sem dublagem, em qualidade baixa e sumindo por direito autoral toda semana. O que você está pagando aqui não é o vídeo em si, são as centenas de horas de garimpo, download, organização e nomeação que já foram feitas pra você. Você digita o nome do desenho e ele aparece. Só isso.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">Como eu recebo depois de pagar?</div>
+        <div class="faq-answer">Assim que o Pix é confirmado, você recebe um e-mail e uma mensagem no WhatsApp com o link de acesso. É clicar e já começar a assistir ou baixar. Não tem espera, não tem análise, não tem frete.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">Funciona na Smart TV e no celular?</div>
+        <div class="faq-answer">Sim. Está tudo em MP4, que é o formato universal. Funciona em Android, iPhone, tablet, Smart TV, notebook e até por pen drive na TV. Não precisa instalar nenhum aplicativo nem criar login.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">Os desenhos são dublados em português?</div>
+        <div class="faq-answer">Sim, a grande maioria está com a dublagem clássica em português, aquela mesma que você ouvia na época. Tudo separado por nome, temporada e episódio pra você achar rápido.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">Tem mensalidade? Vai cobrar de novo depois?</div>
+        <div class="faq-answer">Não. É pagamento único. Você paga uma vez e o acesso é vitalício: sem renovação, sem assinatura e sem nenhuma cobrança recorrente no cartão.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">Preciso de internet pra assistir?</div>
+        <div class="faq-answer">Só pra baixar. Depois que os episódios estão no seu celular ou computador, você assiste offline quantas vezes quiser, na viagem, no carro, na casa da vovó, onde for.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">Qual a diferença entre os dois planos?</div>
+        <div class="faq-answer">O Básico de R$ 12,90 é uma amostra do acervo: 400 desenhos selecionados, pra quem só quer experimentar antes. O Completo de R$ 29,90 tem os <strong>2.500 desenhos</strong> organizados por década e ainda inclui os bônus com 44.000 HQs, mangás e gibis. A diferença é de R$ 17,00 e é por isso que 8 em cada 10 pessoas levam o completo.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">E se eu não gostar?</div>
+        <div class="faq-answer">Você tem 30 dias de garantia incondicional. Se achar que não valeu, manda um e-mail e devolvemos 100% do valor. Sem formulário e sem pergunta.</div>
+      </div>
+
+      <div class="text-center" style="margin-top: 50px;">
+        <a href="#checkout" class="cta-btn bangers">QUERO GARANTIR AGORA</a>
+        <span class="cta-subtext cta-subtext-1l">Pagamento único • Acesso vitalício • 30 dias de garantia</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- FECHAMENTO: DUAS OPÇÕES -->
+  <section class="close-section">
+    <div class="container text-center">
+      <h2 class="bangers" style="font-size: 3rem; color: var(--gold); margin: 0 0 5px 0; text-shadow: 0 4px 10px rgba(0,0,0,0.5);">VOCÊ TEM DUAS OPÇÕES AGORA</h2>
+      <div class="close-grid">
+        <div class="close-card close-bad">
+          <h3 class="bangers">OPÇÃO 1: FECHAR ESSA PÁGINA</h3>
+          Você volta a caçar episódio cortado no YouTube, a esbarrar em link quebrado e a aturar propaganda no meio da cena, e continua sem achar aquele desenho específico. Daqui a alguns meses você vai lembrar dele de novo, e vai estar exatamente no mesmo lugar.
+        </div>
+        <div class="close-card close-good">
+          <h3 class="bangers">OPÇÃO 2: ASSISTIR AOS CLÁSSICOS</h3>
+          Você paga R$ 29,90 uma única vez, recebe os 2.500 desenhos e os 44.000 gibis em poucos minutos no WhatsApp e hoje à noite já está no sofá revendo a sua infância. E se não gostar, tem 30 dias pra pedir cada centavo de volta.
+        </div>
+      </div>
+      <a href="#checkout" class="cta-btn bangers">QUERO A OPÇÃO 2</a>
+      <span class="cta-subtext cta-subtext-1l">Pagamento único • Acesso vitalício • 30 dias de garantia</span>
+    </div>
+  </section>
+
+  <!-- UPSELL MODAL -->
+  <div id="upsellModal" class="upsell-overlay">
+    <div class="upsell-modal" style="position: relative;">
+      <div onclick="closeUpsell()" class="upsell-back">
+        <span style="font-size: 1.2rem;">←</span> Voltar
+      </div>
+      <h2 class="upsell-title bangers">ESPERA! OLHA O QUE FICA DE FORA</h2>
+      <p class="upsell-desc">No <strong>Básico</strong> você leva 400 desenhos. Olha tudo o que fica pra trás:</p>
+
+      <div class="loss-box">
+        <div class="loss-row"><span>✕ Os outros <strong>2.100 desenhos</strong></span><span>R$ 17,00</span></div>
+        <div class="loss-row"><span>✕ 15.000 HQs da Marvel e DC</span><span>R$ 27,90</span></div>
+        <div class="loss-row"><span>✕ 15.000 mangás clássicos</span><span>R$ 39,90</span></div>
+        <div class="loss-row"><span>✕ Todas as edições da Turma da Mônica Jovem</span><span>R$ 34,90</span></div>
+        <div class="loss-row"><span>✕ 14.000 gibis clássicos da Mônica</span><span>R$ 29,90</span></div>
+        <div class="loss-total"><span>Você está abrindo mão de:</span><span>R$ 149,60</span></div>
+      </div>
+
+      <div class="upsell-flip">Por <strong>R$ 7,00 a mais</strong> que o básico, tudo isso entra junto agora.</div>
+
+      <span class="upsell-price-old" style="font-weight: 900;">DE R$ 29,90</span>
+      <div class="upsell-price" style="font-weight: 900;">POR R$ 19,90</div>
+      <div class="upsell-note">Fora dessa tela, o completo volta a custar R$ 29,90.</div>
+
+      <!-- ⚠️ TROCAR: links de checkout do upsell (sim) e do plano básico (não) -->
+      <a href="https://ggcheckout.app/checkout/v4/vG3hFQyD0l5uaKu0bvB7" class="upsell-btn-yes bangers">SIM, QUERO MEU DESCONTO</a>
+      <a href="https://ggcheckout.app/checkout/v4/iWgQpziQ86A0oizWAlum" class="upsell-btn-no" style="display: block; text-decoration: none; text-align: center;">Não, quero só os 400 desenhos por R$ 12,90</a>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container">
+      <div class="footer-logo bangers" style="font-size: 2rem; color: var(--gold); text-shadow: 0 4px 10px rgba(0,0,0,0.5); max-width: none; width: auto;">CLÁSSICOS DOS DESENHOS</div>
+      <p>Clássicos dos Desenhos © 2026 - Todos os direitos reservados.</p>
+      <p>Este site não faz parte e não tem afiliação com a Disney, Warner Bros., Cartoon Network, Hanna-Barbera, Nickelodeon, Universal, Mattel, Facebook ou Google.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Upsell Modal Logic
+    // Encaixa o modal de upsell inteiro na tela, sem rolagem, em qualquer aparelho.
+    // Mede a altura real do conteudo e reduz proporcionalmente (--fit) se nao couber.
+    function fitUpsell() {
+        var overlay = document.getElementById('upsellModal');
+        if (!overlay || overlay.style.display !== 'flex') return;
+        var modal = overlay.querySelector('.upsell-modal');
+        if (!modal) return;
+
+        modal.style.setProperty('--fit', '1');              // mede no tamanho natural
+        var estilo = getComputedStyle(overlay);
+        var alturaLivre  = overlay.clientHeight - parseFloat(estilo.paddingTop)  - parseFloat(estilo.paddingBottom);
+        var larguraLivre = overlay.clientWidth  - parseFloat(estilo.paddingLeft) - parseFloat(estilo.paddingRight);
+
+        var k = 1;
+        if (modal.offsetHeight > alturaLivre)  k = alturaLivre / modal.offsetHeight;
+        if (modal.offsetWidth  > larguraLivre) k = Math.min(k, larguraLivre / modal.offsetWidth);
+        if (!isFinite(k) || k <= 0) k = 1;
+
+        modal.style.setProperty('--fit', Math.min(1, k).toFixed(4));
     }
-    </script>
-    <script>
-    /* Carrossel da secao de nostalgia */
-    document.querySelectorAll('[data-carrossel]').forEach((car) => {
-        const trilha = car.querySelector('.carrossel-trilha');
-        const total = trilha.children.length;
-        const pontos = car.querySelectorAll('.carrossel-ponto');
-        let atual = 0;
-        let timer = null;
 
-        const ir = (i) => {
-            atual = (i + total) % total;
-            trilha.style.transform = 'translateX(-' + (atual * 100) + '%)';
-            pontos.forEach((ponto, k) => ponto.classList.toggle('ativo', k === atual));
-        };
-        /* cadeia de setTimeout em vez de setInterval: cada troca so e agendada
-           depois da anterior acontecer, entao o intervalo nunca acumula */
-        const parar = () => { clearTimeout(timer); timer = null; };
-        const iniciar = () => {
-            parar();
-            timer = setTimeout(() => { ir(atual + 1); iniciar(); }, 2500);
-        };
-        const navegar = (i) => { ir(i); iniciar(); };
+    function openUpsell(e) {
+        if (e) e.preventDefault();
+        document.getElementById('upsellModal').style.display = 'flex';
+        fitUpsell();
+        // reajusta depois que o layout assenta e no fim da animacao de entrada
+        requestAnimationFrame(fitUpsell);
+        setTimeout(fitUpsell, 450);
+    }
 
-        car.querySelector('.prev').addEventListener('click', () => navegar(atual - 1));
-        car.querySelector('.next').addEventListener('click', () => navegar(atual + 1));
-        pontos.forEach((ponto, k) => ponto.addEventListener('click', () => navegar(k)));
-        car.addEventListener('mouseenter', parar);
-        car.addEventListener('mouseleave', iniciar);
+    function closeUpsell() {
+        document.getElementById('upsellModal').style.display = 'none';
+    }
 
-        /* aba em segundo plano: pausa, para nao voltar disparando trocas atrasadas */
-        document.addEventListener('visibilitychange', () => {
-            if (document.hidden) { parar(); } else { iniciar(); }
+    window.addEventListener('resize', fitUpsell);
+    window.addEventListener('orientationchange', function () { setTimeout(fitUpsell, 250); });
+    if (document.fonts && document.fonts.ready) { document.fonts.ready.then(fitUpsell); }
+
+    // O carrossel agora é animado 100% via CSS para máxima fluidez (60fps)
+
+    // Scroll suave via JS para não sujar a URL e manter o F5 no topo
+    document.querySelectorAll('a[href="#checkout"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector('#checkout').scrollIntoView({
+                behavior: 'smooth'
+            });
         });
-
-        ir(0);
-        iniciar();
     });
-    </script>
-    <script>
-    /* Popup de upsell no botao da oferta de entrada */
-    (function () {
-        const overlay = document.getElementById('upsell');
-        if (!overlay) return;
-        let ultimoFoco = null;
 
-        const abrir = () => {
-            ultimoFoco = document.activeElement;
-            overlay.classList.add('aberto');
-            document.body.classList.add('upsell-travado');
-            overlay.querySelector('.btn-primary').focus();
-        };
-        const fechar = () => {
-            overlay.classList.remove('aberto');
-            document.body.classList.remove('upsell-travado');
-            if (ultimoFoco) ultimoFoco.focus();
-        };
+    // Se o usuário apertar F5 e a URL já estiver com #checkout, removemos e jogamos pro topo
+    if (window.location.hash === '#checkout') {
+        window.history.replaceState(null, '', window.location.pathname + window.location.search);
+        setTimeout(() => window.scrollTo(0, 0), 10);
+    }
+  </script>
 
-        document.querySelectorAll('[data-abre-upsell]').forEach((b) => b.addEventListener('click', abrir));
-        overlay.querySelectorAll('[data-fecha-upsell]').forEach((b) => b.addEventListener('click', fechar));
-        overlay.addEventListener('click', (e) => { if (e.target === overlay) fechar(); });
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && overlay.classList.contains('aberto')) fechar();
-        });
-    })();
-    </script>
-    <script>
-        lucide.createIcons();
-    </script>
+  <!-- MODAL CATÁLOGO -->
+  <div id="catalogOverlay" class="catalog-overlay" onclick="if(event.target===this)closeCatalog()">
+    <div class="catalog-box">
+      <button class="catalog-close" onclick="closeCatalog()">✕</button>
+      <h3 id="catalogTitle"></h3>
+      <div id="catalogTags" class="character-tags" style="justify-content:center;"></div>
+    </div>
+  </div>
+  <script>
+  var _catalogs = {"anos80": {"title": "⚔️ Anos 80 / Aventura", "tags": ["He-Man", "She-Ra", "Thundercats", "Cavaleiros do Zodíaco", "Caverna do Dragão", "Transformers", "GI Joe", "Tartarugas Ninja", "Capitão Planeta", "Os Smurfs", "Ursinhos Carinhosos", "Os Jetsons", "Os Flintstones"]}, "anos90": {"title": "🦸 Anos 90 / Heróis & Ação", "tags": ["X-Men", "Batman", "Homem-Aranha", "Gargoyles", "Darkwing Duck", "DuckTales", "Animaniacs", "Pinky e o Cérebro", "Tico e Teco", "Luluzinha", "Hey Arnold", "Rugrats", "Doug Funnie", "Scooby-Doo", "Flintstones"]}, "anos2000": {"title": "📺 Anos 2000 / Cartoon Network", "tags": ["Bob Esponja", "Laboratório de Dexter", "Meninas Superpoderosas", "Coragem, o Cão Covarde", "Jimmy Neutron", "Kim Possible", "Padrinhos Mágicos", "Danny Phantom", "Avatar", "Foster's Home", "Ed, Edd e Eddy", "Johnny Bravo", "Rugrats Crescidos", "Fairly Odd Parents"]}, "animes": {"title": "⛩️ Animes Clássicos", "tags": ["Pokémon", "Dragon Ball Z", "Naruto", "Sailor Moon", "Digimon", "Yu-Gi-Oh!", "Beyblade", "Card Captors Sakura", "Dragon Ball", "Cavaleiros do Zodíaco", "Inuyasha", "Dragon Ball GT"]}, "classicos": {"title": "🌟 Clássicos de Todos os Tempos", "tags": ["Tom & Jerry", "Pica-Pau", "Pernalonga", "Scooby-Doo", "Mickey Mouse", "Popeye", "Garfield", "Charlie Brown", "Pato Donald", "Penelope Charmosa", "Corrida Maluca", "Loonatics"]}};
+  function openCatalog(id) {
+    var d = _catalogs[id];
+    document.getElementById('catalogTitle').textContent = d.title;
+    document.getElementById('catalogTags').innerHTML = d.tags.map(function(t){return '<span class="character-tag">'+t+'</span>';}).join('');
+    document.getElementById('catalogOverlay').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeCatalog() {
+    document.getElementById('catalogOverlay').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  document.addEventListener('keydown', function(e){if(e.key==='Escape') closeCatalog();});
+  </script>
 </body>
 </html>
+
+
+
