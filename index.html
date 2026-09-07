@@ -1112,6 +1112,9 @@
         margin-bottom: 18px;
     }
     .hero-headline { font-size: 3.4rem; }
+    /* quebras de linha da headline: .br-mob so no celular, .br-desk so no desktop */
+    .br-mob { display: none; }
+    .br-desk { display: inline; }
     .hero-price-line {
         color: #FFF;
         font-size: 1rem;
@@ -1184,6 +1187,8 @@
 
     @media (max-width: 768px) {
         .hero-headline { font-size: 1.95rem; line-height: 1.22; }
+        .br-mob { display: inline; }
+        .br-desk { display: none; }
         .hero-eyebrow { font-size: 0.64rem; padding: 7px 12px; margin-bottom: 14px; letter-spacing: 0.5px; }
         .hero-price-line { font-size: 0.92rem; }
         .hero-price-line strong { font-size: 1.2rem; }
@@ -1335,8 +1340,7 @@
       <div class="hero-eyebrow">Se você cresceu nos anos 80, 90 ou 2000</div>
 
       <h1 class="hero-headline bangers">
-        Sua Infância Está Salva<br>
-        Mais de 2.500 <span class="highlight">Desenhos Clássicos da TV</span>
+        Sua Infância Está<br class="br-mob"> Salva<br class="br-desk"> Mais de<br class="br-mob"> 2.500 <span class="highlight">Desenhos<br class="br-mob"> Clássicos da TV</span>
       </h1>
 
       <p class="hero-subheadline">
