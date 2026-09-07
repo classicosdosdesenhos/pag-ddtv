@@ -443,11 +443,29 @@
         margin-right: auto;
     }
 
-    /* Capa do VSL: o player da Wistia so entra quando o visitante pede.
-       Assim o LCP passa a ser esta imagem local (84KB) em vez do poster que a
-       Wistia injeta depois de rodar ~2,4s de JavaScript. */
-    .vsl-capa { position: relative; cursor: pointer; display: block; line-height: 0; }
-    .vsl-capa img { width: 100%; height: auto; display: block; }
+    /* Capa do VSL. O player da Wistia fica montado por baixo e a capa por cima:
+       assim o visitante nunca ve um buraco enquanto o player carrega, e o play()
+       e disparado dentro do proprio gesto do clique - exigencia do iOS. */
+    /* A altura e reservada pelo padding (aspecto 9:16 do VSL) e NAO depende de o
+       player existir ou nao. Antes usava .vsl-slot:empty, e no instante em que o
+       <wistia-player> entrava a caixa colapsava: a capa ficava com altura zero e
+       sem area clicavel - era isso que impedia o video de tocar. */
+    #vsl-caixa { position: relative; padding-top: 180%; }
+    /* O player fica montado porem invisivel ate o video comecar. Elemento com
+       visibility:hidden nao entra na conta do Layout Shift, entao a arrumacao
+       interna do player da Wistia (que na pagina original empurrava o carrossel
+       e a secao seguinte) deixa de contar. O visitante nao ve diferenca: a capa
+       esta por cima o tempo todo. */
+    .vsl-slot { position: absolute; inset: 0; line-height: 0; visibility: hidden; }
+    .vsl-slot.visivel { visibility: visible; }
+    .vsl-slot wistia-player { display: block; width: 100%; height: 100%; }
+    .vsl-capa {
+        position: absolute; inset: 0; z-index: 2;
+        cursor: pointer; line-height: 0; background: #000;
+        transition: opacity 0.25s ease;
+    }
+    .vsl-capa[hidden] { display: none; }
+    .vsl-capa img { width: 100%; height: 100%; object-fit: cover; display: block; }
     .vsl-play {
         position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
         width: 78px; height: 78px; border-radius: 50%;
@@ -463,7 +481,18 @@
     }
     .vsl-capa:hover .vsl-play { transform: translate(-50%, -50%) scale(1.08); background: rgba(0,0,0,0.72); }
     .vsl-capa:focus-visible { outline: 3px solid var(--gold); outline-offset: 4px; }
-    @media (prefers-reduced-motion: reduce) { .vsl-play { transition: none; } }
+    .vsl-carregando {
+        position: absolute; left: 50%; bottom: 16%; transform: translateX(-50%);
+        color: #FFF; font-size: 0.82rem; font-weight: 800; letter-spacing: 0.5px;
+        text-transform: uppercase; text-shadow: 0 2px 6px rgba(0,0,0,0.8);
+        line-height: 1.2; white-space: nowrap;
+    }
+    .vsl-capa.ocupada .vsl-play { opacity: 0.35; animation: pulse-play 1.1s ease-in-out infinite; }
+    @keyframes pulse-play { 50% { opacity: 0.75; } }
+    @media (prefers-reduced-motion: reduce) {
+        .vsl-play { transition: none; }
+        .vsl-capa.ocupada .vsl-play { animation: none; }
+    }
 
     /* VSL CONTAINER */
     .vsl-container {
@@ -1395,12 +1424,14 @@
 
       <!-- VSL CONTAINER -->
       <!-- ⚠️ TROCAR: media-id abaixo precisa ser o ID do vídeo VSL novo (gravado/cortado pra esse produto) -->
-      <div class="vsl-container">
+      <div class="vsl-container" id="vsl-caixa">
+        <div class="vsl-slot" id="vsl-slot"></div>
         <div class="vsl-capa" id="vsl-capa" role="button" tabindex="0"
              aria-label="Assistir ao vídeo de apresentação">
           <img src="imagens/vsl-poster.webp" alt="Prévia do vídeo de apresentação"
                width="720" height="1296" fetchpriority="high" decoding="async">
           <span class="vsl-play" aria-hidden="true"></span>
+          <span class="vsl-carregando" hidden>carregando o vídeo...</span>
         </div>
       </div>
 
@@ -1881,20 +1912,100 @@
 
 
     /* ------------------------------------------------------------------
-       VSL: a Wistia so e carregada quando o visitante interage. O embed
-       original custava ~2,4s de JavaScript e 1,8MB de video no primeiro
-       carregamento, mesmo sem ninguem apertar play (o video nao tem
-       autoplay). Ao clicar, o player entra e ja comeca a tocar.
+       VSL sob demanda, sem quebrar o play.
+       O embed original custava ~2,4s de JavaScript e 1,8MB de video em TODO
+       carregamento, mesmo sem ninguem apertar play (o video nao tem autoplay).
+       Aqui o player e montado por baixo da capa no primeiro sinal de interesse
+       (ou 2,5s depois do load). Quando o visitante clica, o player ja esta
+       pronto e o play() acontece DENTRO do gesto - o iOS so libera o som assim.
+       Se ainda estiver carregando, a capa continua na tela avisando e o video
+       comeca sozinho assim que ficar pronto.
+       O play e feito pelo metodo do proprio <wistia-player>; a API antiga
+       (_wq/onReady) nao dispara com esse componente.
        ------------------------------------------------------------------ */
     (function () {
         var capa = document.getElementById('vsl-capa');
-        if (!capa) return;
-        var MEDIA = '4oko3lnus0';
-        var carregado = false;
+        var slot = document.getElementById('vsl-slot');
+        if (!capa || !slot) return;
 
-        function carregarPlayer(tocar) {
-            if (carregado) return;
-            carregado = true;
+        var MEDIA = '4oko3lnus0';
+        var montado = false;
+        var querTocar = false;
+        var aviso = capa.querySelector('.vsl-carregando');
+
+        function esconderCapa() {
+            slot.classList.add('visivel');
+            capa.style.opacity = '0';
+            setTimeout(function () { capa.hidden = true; }, 260);
+        }
+
+        function tocando() {
+            // o <video> vive dentro do shadow DOM do player
+            function busca(raiz) {
+                var v = raiz.querySelector && raiz.querySelector('video');
+                if (v) return v;
+                var todos = raiz.querySelectorAll ? raiz.querySelectorAll('*') : [];
+                for (var i = 0; i < todos.length; i++) {
+                    if (todos[i].shadowRoot) { var r = busca(todos[i].shadowRoot); if (r) return r; }
+                }
+                return null;
+            }
+            var v = busca(slot);
+            return v && !v.paused && v.currentTime > 0;
+        }
+
+        function player() {
+            var pl = slot.querySelector('wistia-player');
+            return (pl && typeof pl.play === 'function') ? pl : null;
+        }
+
+        function esperando(ligado) {
+            capa.classList.toggle('ocupada', ligado);
+            if (aviso) aviso.hidden = !ligado;
+        }
+
+        /* Vigia unico: depois que o visitante pede play, fica insistindo no
+           player e so para quando o video anda de verdade. Roda solto ate 90s
+           porque em 3G o player e o video demoram - se ele parasse antes, o
+           video comecava atras da capa e ninguem via. O aviso de "carregando"
+           sai antes disso (12s) para devolver o botao a quem quiser tocar de
+           novo; o vigia continua no fundo de qualquer jeito. */
+        var vigiando = false;
+        function vigiar() {
+            if (vigiando) return;
+            vigiando = true;
+            var inicio = Date.now(), ultimoPlay = 0;
+            (function laco() {
+                if (tocando()) { esperando(false); esconderCapa(); vigiando = false; return; }
+                var decorrido = Date.now() - inicio;
+                if (decorrido > 12000) esperando(false);      // devolve o botao
+                if (decorrido > 90000) { vigiando = false; return; }
+                var pl = player();
+                if (pl && Date.now() - ultimoPlay > 600) {
+                    ultimoPlay = Date.now();
+                    try { pl.play(); } catch (e) {}
+                }
+                setTimeout(laco, 200);
+            })();
+        }
+
+        function tentarTocar() {
+            var pl = player();
+            if (!pl) return false;
+            try { pl.play(); } catch (e) { return false; }   // play dentro do gesto
+            vigiar();
+            return true;
+        }
+
+        function montar() {
+            if (montado) return;
+            montado = true;
+
+            var pl = document.createElement('wistia-player');
+            pl.setAttribute('media-id', MEDIA);
+            pl.setAttribute('seo', 'false');
+            pl.setAttribute('aspect', '0.5555555555555556');
+            slot.appendChild(pl);
 
             ['https://fast.wistia.com/player.js',
              'https://fast.wistia.com/embed/' + MEDIA + '.js'].forEach(function (src, i) {
@@ -1904,28 +2015,38 @@
                 document.head.appendChild(t);
             });
 
-            if (!tocar) return;
-            var pl = document.createElement('wistia-player');
-            pl.setAttribute('media-id', MEDIA);
-            pl.setAttribute('seo', 'false');
-            pl.setAttribute('aspect', '0.5555555555555556');
-            pl.setAttribute('autoplay', 'true');
-            capa.parentNode.replaceChild(pl, capa);
+            // espera o componente ser registrado para atender quem ja clicou
+            var fim = Date.now() + 20000;
+            (function espera() {
+                if (player()) { if (querTocar) tentarTocar(); return; }
+                if (Date.now() < fim) setTimeout(espera, 120);
+            })();
         }
 
-        capa.addEventListener('click', function () { carregarPlayer(true); });
+        function acionar() {
+            esperando(true);                    // feedback imediato: nunca fica um buraco mudo
+            querTocar = true;
+            montar();                           // no-op se ja estiver montado
+            tentarTocar();                      // play dentro do gesto, se der
+            vigiar();                           // e insiste ate engatar
+        }
+
+        capa.addEventListener('click', acionar);
         capa.addEventListener('keydown', function (e) {
-            if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); carregarPlayer(true); }
+            if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); acionar(); }
         });
-        // pre-carrega o player em segundo plano no primeiro sinal de interesse,
-        // para que o clique nao espere o download
-        ['pointerdown', 'touchstart', 'scroll', 'keydown'].forEach(function (ev) {
-            window.addEventListener(ev, function aquece() {
-                ['pointerdown','touchstart','scroll','keydown'].forEach(function (e2) {
-                    window.removeEventListener(e2, aquece);
-                });
-                setTimeout(function () { carregarPlayer(false); }, 1200);
-            }, { once: false, passive: true });
+
+        // Monta no primeiro sinal de interesse do visitante: mouse sobre a capa,
+        // toque na tela ou qualquer rolagem. NAO montamos por tempo (ex.: 2,5s
+        // depois do load) porque isso traz os ~2,4s de JavaScript da Wistia de
+        // volta para dentro da janela do TBT e derruba a nota de 93 para 54.
+        // Na pratica quase todo visitante rola ou toca antes de clicar no play,
+        // entao o player ja esta pronto quando ele clica.
+        ['pointerenter', 'pointerdown', 'touchstart'].forEach(function (ev) {
+            capa.addEventListener(ev, montar, { passive: true, once: true });
+        });
+        ['scroll', 'touchstart', 'keydown'].forEach(function (ev) {
+            window.addEventListener(ev, montar, { passive: true, once: true });
         });
     })();
 
