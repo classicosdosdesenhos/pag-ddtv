@@ -10,10 +10,33 @@
   <script type="text/javascript">
     (function(c,l,a,r,i,t,y){
         c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        function sobe(){t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);}
+        function agendar(){
+            // precisa ser chamado com window como receptor, senao o Chrome
+            // lanca "Illegal invocation" e o Clarity nunca sobe
+            if (c.requestIdleCallback) c.requestIdleCallback(sobe, { timeout: 3000 });
+            else c.setTimeout(sobe, 200);
+        }
+        if (l.readyState === "complete") agendar();
+        else c.addEventListener("load", agendar);
     })(window, document, "clarity", "script", "ydr9svumeq");
   </script>
+  <!-- Abre as conexoes com os dominios do player e do rastreio antes de precisar deles.
+       Sem isso o navegador so faz DNS+TLS quando o script pede, custando ~320ms cada. -->
+  <link rel="preconnect" href="https://fast.wistia.com" crossorigin>
+  <link rel="preconnect" href="https://fast.wistia.net" crossorigin>
+  <link rel="preconnect" href="https://embed-ssl.wistia.com" crossorigin>
+  <link rel="preconnect" href="https://embed-cloudfront.wistia.com" crossorigin>
+  <link rel="dns-prefetch" href="https://scripts.clarity.ms">
+  <link rel="dns-prefetch" href="https://cdn.utmify.com.br">
+
+  <!-- As duas fontes latinas sao descobertas so depois que o CSS casa com o texto (~490ms).
+       O preload antecipa a busca para o inicio do carregamento. -->
+  <link rel="preload" as="image" href="imagens/vsl-poster.webp" fetchpriority="high">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="fontes/montserrat-JTUSjIg1_i6t8kCHKm459Wlhyw.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="fontes/bangers-FeVQS0BTqb0h60ACH55Q2A.woff2">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Baú dos Desenhos - Os desenhos da sua infância que sumiram da TV</title>
   <meta name="description" content="2.500 desenhos clássicos dos anos 80, 90 e 2000, dublados em português e organizados por década. Assista no celular, tablet, Smart TV ou PC. A partir de R$ 12,90 no Pix." />
@@ -420,6 +443,28 @@
         margin-right: auto;
     }
 
+    /* Capa do VSL: o player da Wistia so entra quando o visitante pede.
+       Assim o LCP passa a ser esta imagem local (84KB) em vez do poster que a
+       Wistia injeta depois de rodar ~2,4s de JavaScript. */
+    .vsl-capa { position: relative; cursor: pointer; display: block; line-height: 0; }
+    .vsl-capa img { width: 100%; height: auto; display: block; }
+    .vsl-play {
+        position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+        width: 78px; height: 78px; border-radius: 50%;
+        background: rgba(0,0,0,0.55); border: 3px solid #FFF;
+        box-shadow: 0 6px 24px rgba(0,0,0,0.5);
+        transition: transform 0.2s, background 0.2s;
+    }
+    .vsl-play::after {
+        content: ""; position: absolute; left: 54%; top: 50%;
+        transform: translate(-50%, -50%);
+        border-style: solid; border-width: 15px 0 15px 25px;
+        border-color: transparent transparent transparent #FFF;
+    }
+    .vsl-capa:hover .vsl-play { transform: translate(-50%, -50%) scale(1.08); background: rgba(0,0,0,0.72); }
+    .vsl-capa:focus-visible { outline: 3px solid var(--gold); outline-offset: 4px; }
+    @media (prefers-reduced-motion: reduce) { .vsl-play { transition: none; } }
+
     /* VSL CONTAINER */
     .vsl-container {
         width: 100%;
@@ -785,6 +830,7 @@
         100% { transform: translateX(-50%); }
     }
     .carousel-item {
+        background: #17171F;   /* fundo enquanto a imagem ainda nao foi hidratada */
         display: inline-block;
         width: 220px;
         height: 320px;
@@ -1350,7 +1396,12 @@
       <!-- VSL CONTAINER -->
       <!-- ⚠️ TROCAR: media-id abaixo precisa ser o ID do vídeo VSL novo (gravado/cortado pra esse produto) -->
       <div class="vsl-container">
-        <script src="https://fast.wistia.com/player.js" async></script><script src="https://fast.wistia.com/embed/4oko3lnus0.js" async type="module"></script><style>wistia-player[media-id='4oko3lnus0']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/4oko3lnus0/swatch'); display: block; filter: blur(5px); padding-top:180.0%; }</style> <wistia-player media-id="4oko3lnus0" seo="false" aspect="0.5555555555555556"></wistia-player>
+        <div class="vsl-capa" id="vsl-capa" role="button" tabindex="0"
+             aria-label="Assistir ao vídeo de apresentação">
+          <img src="imagens/vsl-poster.webp" alt="Prévia do vídeo de apresentação"
+               width="720" height="1296" fetchpriority="high" decoding="async">
+          <span class="vsl-play" aria-hidden="true"></span>
+        </div>
       </div>
 
       <a href="#checkout" class="cta-btn bangers">
@@ -1362,41 +1413,41 @@
       <div class="carousel-wrapper">
                                         <div class="carousel-track">
           <!-- Bloco 1 -->
-          <img src="imagens/01.webp" class="carousel-item" alt="Os Jetsons" decoding="async" width="220" height="310">
-          <img src="imagens/02.webp" class="carousel-item" alt="O Máskara" decoding="async" width="220" height="310">
-          <img src="imagens/03.webp" class="carousel-item" alt="Pokémon" decoding="async" width="220" height="310">
-          <img src="imagens/04.webp" class="carousel-item" alt="Animaniacs" decoding="async" width="220" height="310">
-          <img src="imagens/05.webp" class="carousel-item" alt="The Loud House" decoding="async" width="220" height="310">
-          <img src="imagens/06.webp" class="carousel-item" alt="Tom e Jerry" decoding="async" width="220" height="310">
-          <img src="imagens/07.webp" class="carousel-item" alt="Teen Titans Go!" decoding="async" width="220" height="310">
-          <img src="imagens/08.webp" class="carousel-item" alt="Johnny Bravo" decoding="async" width="220" height="310">
-          <img src="imagens/09.webp" class="carousel-item" alt="Steven Universe" decoding="async" width="220" height="310">
-          <img src="imagens/10.webp" class="carousel-item" alt="Super Choque" decoding="async" width="220" height="310">
-          <img src="imagens/11.webp" class="carousel-item" alt="Scooby-Doo" decoding="async" width="220" height="310">
-          <img src="imagens/12.webp" class="carousel-item" alt="He-Man" decoding="async" width="220" height="310">
-          <img src="imagens/13.webp" class="carousel-item" alt="Caverna do Dragão" decoding="async" width="220" height="310">
-          <img src="imagens/15.webp" class="carousel-item" alt="Pica-Pau" decoding="async" width="220" height="310">
-          <img src="imagens/16.webp" class="carousel-item" alt="Corrida Maluca" decoding="async" width="220" height="310">
-          <img src="imagens/17.webp" class="carousel-item" alt="Luluzinha" decoding="async" width="220" height="310">
-          <img src="imagens/18.webp" class="carousel-item" alt="Mr. Bean" decoding="async" width="220" height="310">
+          <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="imagens/01.webp" data-srcset="imagens/01-300.webp 300w, imagens/01.webp 441w" sizes="(max-width: 768px) 130px, 220px" class="carousel-item" alt="Os Jetsons" decoding="async" width="220" height="310">
+          <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="imagens/02.webp" data-srcset="imagens/02-300.webp 300w, imagens/02.webp 441w" sizes="(max-width: 768px) 130px, 220px" class="carousel-item" alt="O Máskara" decoding="async" width="220" height="310">
+          <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="imagens/03.webp" data-srcset="imagens/03-300.webp 300w, imagens/03.webp 441w" sizes="(max-width: 768px) 130px, 220px" class="carousel-item" alt="Pokémon" decoding="async" width="220" height="310">
+          <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="imagens/04.webp" data-srcset="imagens/04-300.webp 300w, imagens/04.webp 441w" sizes="(max-width: 768px) 130px, 220px" class="carousel-item" alt="Animaniacs" decoding="async" width="220" height="310">
+          <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="imagens/05.webp" data-srcset="imagens/05-300.webp 300w, imagens/05.webp 441w" sizes="(max-width: 768px) 130px, 220px" class="carousel-item" alt="The Loud House" decoding="async" width="220" height="310">
+          <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="imagens/06.webp" data-srcset="imagens/06-300.webp 300w, imagens/06.webp 441w" sizes="(max-width: 768px) 130px, 220px" class="carousel-item" alt="Tom e Jerry" decoding="async" width="220" height="310">
+          <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="imagens/07.webp" data-srcset="imagens/07-300.webp 300w, imagens/07.webp 441w" sizes="(max-width: 768px) 130px, 220px" class="carousel-item" alt="Teen Titans Go!" decoding="async" width="220" height="310">
+          <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="imagens/08.webp" data-srcset="imagens/08-300.webp 300w, imagens/08.webp 441w" sizes="(max-width: 768px) 130px, 220px" class="carousel-item" alt="Johnny Bravo" decoding="async" width="220" height="310">
+          <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="imagens/09.webp" data-srcset="imagens/09-300.webp 300w, imagens/09.webp 441w" sizes="(max-width: 768px) 130px, 220px" class="carousel-item" alt="Steven Universe" decoding="async" width="220" height="310">
+          <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="imagens/10.webp" data-srcset="imagens/10-300.webp 300w, imagens/10.webp 441w" sizes="(max-width: 768px) 130px, 220px" class="carousel-item" alt="Super Choque" decoding="async" width="220" height="310">
+          <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="imagens/11.webp" data-srcset="imagens/11-300.webp 300w, imagens/11.webp 441w" sizes="(max-width: 768px) 130px, 220px" class="carousel-item" alt="Scooby-Doo" decoding="async" width="220" height="310">
+          <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="imagens/12.webp" data-srcset="imagens/12-300.webp 300w, imagens/12.webp 441w" sizes="(max-width: 768px) 130px, 220px" class="carousel-item" alt="He-Man" decoding="async" width="220" height="310">
+          <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="imagens/13.webp" data-srcset="imagens/13-300.webp 300w, imagens/13.webp 441w" sizes="(max-width: 768px) 130px, 220px" class="carousel-item" alt="Caverna do Dragão" decoding="async" width="220" height="310">
+          <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="imagens/15.webp" data-srcset="imagens/15-300.webp 300w, imagens/15.webp 441w" sizes="(max-width: 768px) 130px, 220px" class="carousel-item" alt="Pica-Pau" decoding="async" width="220" height="310">
+          <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="imagens/16.webp" data-srcset="imagens/16-300.webp 300w, imagens/16.webp 441w" sizes="(max-width: 768px) 130px, 220px" class="carousel-item" alt="Corrida Maluca" decoding="async" width="220" height="310">
+          <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="imagens/17.webp" data-srcset="imagens/17-300.webp 300w, imagens/17.webp 441w" sizes="(max-width: 768px) 130px, 220px" class="carousel-item" alt="Luluzinha" decoding="async" width="220" height="310">
+          <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="imagens/18.webp" data-srcset="imagens/18-300.webp 300w, imagens/18.webp 441w" sizes="(max-width: 768px) 130px, 220px" class="carousel-item" alt="Mr. Bean" decoding="async" width="220" height="310">
           <!-- Bloco 2 (clone loop) -->
-          <img src="imagens/01.webp" class="carousel-item" alt="Os Jetsons" decoding="async" width="220" height="310">
-          <img src="imagens/02.webp" class="carousel-item" alt="O Máskara" decoding="async" width="220" height="310">
-          <img src="imagens/03.webp" class="carousel-item" alt="Pokémon" decoding="async" width="220" height="310">
-          <img src="imagens/04.webp" class="carousel-item" alt="Animaniacs" decoding="async" width="220" height="310">
-          <img src="imagens/05.webp" class="carousel-item" alt="The Loud House" decoding="async" width="220" height="310">
-          <img src="imagens/06.webp" class="carousel-item" alt="Tom e Jerry" decoding="async" width="220" height="310">
-          <img src="imagens/07.webp" class="carousel-item" alt="Teen Titans Go!" decoding="async" width="220" height="310">
-          <img src="imagens/08.webp" class="carousel-item" alt="Johnny Bravo" decoding="async" width="220" height="310">
-          <img src="imagens/09.webp" class="carousel-item" alt="Steven Universe" decoding="async" width="220" height="310">
-          <img src="imagens/10.webp" class="carousel-item" alt="Super Choque" decoding="async" width="220" height="310">
-          <img src="imagens/11.webp" class="carousel-item" alt="Scooby-Doo" decoding="async" width="220" height="310">
-          <img src="imagens/12.webp" class="carousel-item" alt="He-Man" decoding="async" width="220" height="310">
-          <img src="imagens/13.webp" class="carousel-item" alt="Caverna do Dragão" decoding="async" width="220" height="310">
-          <img src="imagens/15.webp" class="carousel-item" alt="Pica-Pau" decoding="async" width="220" height="310">
-          <img src="imagens/16.webp" class="carousel-item" alt="Corrida Maluca" decoding="async" width="220" height="310">
-          <img src="imagens/17.webp" class="carousel-item" alt="Luluzinha" decoding="async" width="220" height="310">
-          <img src="imagens/18.webp" class="carousel-item" alt="Mr. Bean" decoding="async" width="220" height="310">
+          <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="imagens/01.webp" data-srcset="imagens/01-300.webp 300w, imagens/01.webp 441w" sizes="(max-width: 768px) 130px, 220px" class="carousel-item" aria-hidden="true" alt="Os Jetsons" decoding="async" width="220" height="310">
+          <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="imagens/02.webp" data-srcset="imagens/02-300.webp 300w, imagens/02.webp 441w" sizes="(max-width: 768px) 130px, 220px" class="carousel-item" aria-hidden="true" alt="O Máskara" decoding="async" width="220" height="310">
+          <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="imagens/03.webp" data-srcset="imagens/03-300.webp 300w, imagens/03.webp 441w" sizes="(max-width: 768px) 130px, 220px" class="carousel-item" aria-hidden="true" alt="Pokémon" decoding="async" width="220" height="310">
+          <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="imagens/04.webp" data-srcset="imagens/04-300.webp 300w, imagens/04.webp 441w" sizes="(max-width: 768px) 130px, 220px" class="carousel-item" aria-hidden="true" alt="Animaniacs" decoding="async" width="220" height="310">
+          <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="imagens/05.webp" data-srcset="imagens/05-300.webp 300w, imagens/05.webp 441w" sizes="(max-width: 768px) 130px, 220px" class="carousel-item" aria-hidden="true" alt="The Loud House" decoding="async" width="220" height="310">
+          <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="imagens/06.webp" data-srcset="imagens/06-300.webp 300w, imagens/06.webp 441w" sizes="(max-width: 768px) 130px, 220px" class="carousel-item" aria-hidden="true" alt="Tom e Jerry" decoding="async" width="220" height="310">
+          <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="imagens/07.webp" data-srcset="imagens/07-300.webp 300w, imagens/07.webp 441w" sizes="(max-width: 768px) 130px, 220px" class="carousel-item" aria-hidden="true" alt="Teen Titans Go!" decoding="async" width="220" height="310">
+          <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="imagens/08.webp" data-srcset="imagens/08-300.webp 300w, imagens/08.webp 441w" sizes="(max-width: 768px) 130px, 220px" class="carousel-item" aria-hidden="true" alt="Johnny Bravo" decoding="async" width="220" height="310">
+          <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="imagens/09.webp" data-srcset="imagens/09-300.webp 300w, imagens/09.webp 441w" sizes="(max-width: 768px) 130px, 220px" class="carousel-item" aria-hidden="true" alt="Steven Universe" decoding="async" width="220" height="310">
+          <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="imagens/10.webp" data-srcset="imagens/10-300.webp 300w, imagens/10.webp 441w" sizes="(max-width: 768px) 130px, 220px" class="carousel-item" aria-hidden="true" alt="Super Choque" decoding="async" width="220" height="310">
+          <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="imagens/11.webp" data-srcset="imagens/11-300.webp 300w, imagens/11.webp 441w" sizes="(max-width: 768px) 130px, 220px" class="carousel-item" aria-hidden="true" alt="Scooby-Doo" decoding="async" width="220" height="310">
+          <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="imagens/12.webp" data-srcset="imagens/12-300.webp 300w, imagens/12.webp 441w" sizes="(max-width: 768px) 130px, 220px" class="carousel-item" aria-hidden="true" alt="He-Man" decoding="async" width="220" height="310">
+          <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="imagens/13.webp" data-srcset="imagens/13-300.webp 300w, imagens/13.webp 441w" sizes="(max-width: 768px) 130px, 220px" class="carousel-item" aria-hidden="true" alt="Caverna do Dragão" decoding="async" width="220" height="310">
+          <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="imagens/15.webp" data-srcset="imagens/15-300.webp 300w, imagens/15.webp 441w" sizes="(max-width: 768px) 130px, 220px" class="carousel-item" aria-hidden="true" alt="Pica-Pau" decoding="async" width="220" height="310">
+          <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="imagens/16.webp" data-srcset="imagens/16-300.webp 300w, imagens/16.webp 441w" sizes="(max-width: 768px) 130px, 220px" class="carousel-item" aria-hidden="true" alt="Corrida Maluca" decoding="async" width="220" height="310">
+          <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="imagens/17.webp" data-srcset="imagens/17-300.webp 300w, imagens/17.webp 441w" sizes="(max-width: 768px) 130px, 220px" class="carousel-item" aria-hidden="true" alt="Luluzinha" decoding="async" width="220" height="310">
+          <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="imagens/18.webp" data-srcset="imagens/18-300.webp 300w, imagens/18.webp 441w" sizes="(max-width: 768px) 130px, 220px" class="carousel-item" aria-hidden="true" alt="Mr. Bean" decoding="async" width="220" height="310">
         </div>
       </div>
 
@@ -1531,7 +1582,7 @@
         <div class="bonus-card">
           <div class="bonus-label">BÔNUS #1</div>
           <div class="bonus-title">15.000 HQs de Heróis</div>
-          <img src="imagens/B01.webp" alt="Mockup 15.000 HQs de Heróis" style="width: 100%; max-width: 250px; margin: 0 auto 15px auto; display: block; filter: drop-shadow(0 10px 15px rgba(0,0,0,0.5));">
+          <img src="imagens/B01.webp" loading="lazy" alt="Mockup 15.000 HQs de Heróis" style="width: 100%; max-width: 250px; margin: 0 auto 15px auto; display: block; filter: drop-shadow(0 10px 15px rgba(0,0,0,0.5));">
           <div class="bonus-desc">Uma montanha de gibis e quadrinhos dos universos Marvel &amp; DC, com todos os personagens dentro.</div>
           <div class="bonus-price"><span>De: R$ 27,90</span> | Hoje Sai de Graça</div>
         </div>
@@ -1539,7 +1590,7 @@
         <div class="bonus-card">
           <div class="bonus-label">BÔNUS #2</div>
           <div class="bonus-title">15.000 Mangás Clássicos</div>
-          <img src="imagens/B02.webp" alt="Mockup 15.000 Mangás Clássicos" style="width: 100%; max-width: 250px; margin: 0 auto 15px auto; display: block; filter: drop-shadow(0 10px 15px rgba(0,0,0,0.5));">
+          <img src="imagens/B02.webp" loading="lazy" alt="Mockup 15.000 Mangás Clássicos" style="width: 100%; max-width: 250px; margin: 0 auto 15px auto; display: block; filter: drop-shadow(0 10px 15px rgba(0,0,0,0.5));">
           <div class="bonus-desc">Um coleção gigante e épica com os melhores mangás pra você ler de onde estiver.</div>
           <div class="bonus-price"><span>De: R$ 39,90</span> | Hoje Sai de Graça</div>
         </div>
@@ -1547,7 +1598,7 @@
         <div class="bonus-card">
           <div class="bonus-label">BÔNUS #3</div>
           <div class="bonus-title">Todas as Edições da Turma da Mônica Jovem</div>
-          <img src="imagens/B03.webp" alt="Mockup Turma da Mônica Jovem" style="width: 100%; max-width: 250px; margin: 0 auto 15px auto; display: block; filter: drop-shadow(0 10px 15px rgba(0,0,0,0.5));">
+          <img src="imagens/B03.webp" loading="lazy" alt="Mockup Turma da Mônica Jovem" style="width: 100%; max-width: 250px; margin: 0 auto 15px auto; display: block; filter: drop-shadow(0 10px 15px rgba(0,0,0,0.5));">
           <div class="bonus-desc">A fase adolescente e repaginada da turma, com Mônica, Cebolinha e a companhia já crescidos, em histórias novas para quem cresceu junto.</div>
           <div class="bonus-price"><span>De: R$ 34,90</span> | Hoje Sai de Graça</div>
         </div>
@@ -1555,7 +1606,7 @@
 <div class="bonus-card">
           <div class="bonus-label">BÔNUS #4</div>
           <div class="bonus-title">14.000 Gibis Clássicos da Turma da Mônica</div>
-          <img src="imagens/B04.webp" alt="Mockup 14.000 Gibis Clássicos da Turma da Mônica" style="width: 100%; max-width: 250px; margin: 0 auto 15px auto; display: block; filter: drop-shadow(0 10px 15px rgba(0,0,0,0.5));">
+          <img src="imagens/B04.webp" loading="lazy" alt="Mockup 14.000 Gibis Clássicos da Turma da Mônica" style="width: 100%; max-width: 250px; margin: 0 auto 15px auto; display: block; filter: drop-shadow(0 10px 15px rgba(0,0,0,0.5));">
           <div class="bonus-desc">As revistinhas originais da Turma da Mônica, exatamente do jeito que você folheava na infância.</div>
           <div class="bonus-price"><span>De: R$ 29,90</span> | Hoje Sai de Graça</div>
         </div>
@@ -1572,19 +1623,19 @@
       <h2 class="bangers" style="font-size: 3rem; color: var(--gold);">DEPOIMENTOS REAIS DE QUEM JÁ ADQUIRIU</h2>
       <div class="testi-grid">
         <div class="testi-card">
-          <img src="imagens/vanessa.webp" alt="Vanessa Moreira" class="testi-avatar" decoding="async" width="75" height="75">
+          <img src="imagens/vanessa.webp" srcset="imagens/vanessa-150.webp 150w, imagens/vanessa.webp 300w" sizes="75px" loading="lazy" alt="Vanessa Moreira" class="testi-avatar" decoding="async" width="75" height="75">
           <div class="testi-stars">★★★★★</div>
           <div class="testi-text">"Coloquei na TV pro meu filho de 7 anos ver o que eu assistia na idade dele. Ele largou o celular na hora. Vale cada centavo só por essa sensação."</div>
           <div class="testi-author">Vanessa Moreira</div>
         </div>
         <div class="testi-card">
-          <img src="imagens/rogerio.webp" alt="Rogério Campos" class="testi-avatar" decoding="async" width="75" height="75">
+          <img src="imagens/rogerio.webp" srcset="imagens/rogerio-150.webp 150w, imagens/rogerio.webp 300w" sizes="75px" loading="lazy" alt="Rogério Campos" class="testi-avatar" decoding="async" width="75" height="75">
           <div class="testi-stars">★★★★★</div>
           <div class="testi-text">"Achei desenhos que eu nem lembrava o nome, só lembrava da música de abertura. Foi uma viagem no tempo."</div>
           <div class="testi-author">Rogério Campos</div>
         </div>
         <div class="testi-card">
-          <img src="imagens/cristiane.webp" alt="Cristiane Barbosa" class="testi-avatar" decoding="async" width="75" height="75">
+          <img src="imagens/cristiane.webp" srcset="imagens/cristiane-150.webp 150w, imagens/cristiane.webp 300w" sizes="75px" loading="lazy" alt="Cristiane Barbosa" class="testi-avatar" decoding="async" width="75" height="75">
           <div class="testi-stars">★★★★★</div>
           <div class="testi-text">"O que eu mais gostei foi a organização. Não é aquele monte de link quebrado da internet. Baixei no pendrive e coloquei direto na televisão."</div>
           <div class="testi-author">Cristiane Barbosa</div>
@@ -1670,7 +1721,7 @@
   <!-- GUARANTEE SECTION -->
   <section class="guarantee-section" id="garantia">
     <div class="container" style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
-      <img src="imagens/selo-de-garantia-30-dias-ouro.png" alt="Selo de Garantia 30 Dias Ouro" class="guarantee-badge" decoding="async" width="280" height="280">
+      <img src="imagens/selo-de-garantia-30-dias-ouro.webp" loading="lazy" alt="Selo de Garantia 30 Dias Ouro" class="guarantee-badge" decoding="async" width="280" height="280">
       <div style="text-align: center; max-width: 700px;">
         <h2 class="bangers">30 DIAS DE GARANTIA</h2>
         <p>Confiamos totalmente na qualidade do nosso portal. Se por qualquer razão os desenhos não te agradarem, é só mandar um e-mail dentro de 30 dias que devolvemos cada centavo, sem questionamento nenhum!</p>
@@ -1826,6 +1877,91 @@
     window.addEventListener('resize', fitUpsell);
     window.addEventListener('orientationchange', function () { setTimeout(fitUpsell, 250); });
     if (document.fonts && document.fonts.ready) { document.fonts.ready.then(fitUpsell); }
+
+
+
+    /* ------------------------------------------------------------------
+       VSL: a Wistia so e carregada quando o visitante interage. O embed
+       original custava ~2,4s de JavaScript e 1,8MB de video no primeiro
+       carregamento, mesmo sem ninguem apertar play (o video nao tem
+       autoplay). Ao clicar, o player entra e ja comeca a tocar.
+       ------------------------------------------------------------------ */
+    (function () {
+        var capa = document.getElementById('vsl-capa');
+        if (!capa) return;
+        var MEDIA = '4oko3lnus0';
+        var carregado = false;
+
+        function carregarPlayer(tocar) {
+            if (carregado) return;
+            carregado = true;
+
+            ['https://fast.wistia.com/player.js',
+             'https://fast.wistia.com/embed/' + MEDIA + '.js'].forEach(function (src, i) {
+                var t = document.createElement('script');
+                t.src = src; t.async = true;
+                if (i === 1) t.type = 'module';
+                document.head.appendChild(t);
+            });
+
+            if (!tocar) return;
+            var pl = document.createElement('wistia-player');
+            pl.setAttribute('media-id', MEDIA);
+            pl.setAttribute('seo', 'false');
+            pl.setAttribute('aspect', '0.5555555555555556');
+            pl.setAttribute('autoplay', 'true');
+            capa.parentNode.replaceChild(pl, capa);
+        }
+
+        capa.addEventListener('click', function () { carregarPlayer(true); });
+        capa.addEventListener('keydown', function (e) {
+            if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); carregarPlayer(true); }
+        });
+        // pre-carrega o player em segundo plano no primeiro sinal de interesse,
+        // para que o clique nao espere o download
+        ['pointerdown', 'touchstart', 'scroll', 'keydown'].forEach(function (ev) {
+            window.addEventListener(ev, function aquece() {
+                ['pointerdown','touchstart','scroll','keydown'].forEach(function (e2) {
+                    window.removeEventListener(e2, aquece);
+                });
+                setTimeout(function () { carregarPlayer(false); }, 1200);
+            }, { once: false, passive: true });
+        });
+    })();
+
+    /* ------------------------------------------------------------------
+       CARROSSEL: as imagens ficam com data-src ate a faixa chegar perto da
+       tela. Sao ~700KB que, se baixassem no inicio, roubariam banda das
+       fontes e do video (o LCP da pagina).
+       Ao hidratar, forcamos loading="eager": num carrossel mais largo que a
+       tela, as imagens da direita nunca "chegam perto" da viewport e o lazy
+       nativo as seguraria para sempre.
+       ------------------------------------------------------------------ */
+    (function () {
+        var faixa = document.querySelector('.carousel-wrapper');
+        if (!faixa) return;
+
+        function hidratar() {
+            faixa.querySelectorAll('img[data-src]').forEach(function (img) {
+                img.loading = 'eager';
+                if (img.dataset.srcset) { img.srcset = img.dataset.srcset; img.removeAttribute('data-srcset'); }
+                img.src = img.getAttribute('data-src');
+                img.removeAttribute('data-src');
+            });
+        }
+
+        if (!('IntersectionObserver' in window)) { hidratar(); return; }
+
+        var obs = new IntersectionObserver(function (entradas) {
+            for (var i = 0; i < entradas.length; i++) {
+                if (entradas[i].isIntersecting) { obs.disconnect(); hidratar(); return; }
+            }
+        }, { rootMargin: '300px 0px' });
+        obs.observe(faixa);
+
+        // rede de seguranca: se nada disparar em 6s, carrega assim mesmo
+        setTimeout(function () { if (faixa.querySelector('img[data-src]')) { obs.disconnect(); hidratar(); } }, 6000);
+    })();
 
     // O carrossel agora é animado 100% via CSS para máxima fluidez (60fps)
 
